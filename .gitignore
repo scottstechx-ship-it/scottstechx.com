@@ -1,0 +1,31 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (used by tests/site-smoke.mjs)
+node_modules/
+npm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Build outputs (defensive — not used today but easy to add later)
+dist/
+build/
+
+# Local scratch scripts (e.g. one-off verification helpers)
+_verify_*.py
+_gh_*.py

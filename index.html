@@ -1,0 +1,2681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ScottsTechX Enterprise (U) Ltd — Empowering Businesses Through Innovative Technology in Uganda and beyond.">
+<title>ScottsTechX Enterprise (U) Ltd — Innovative Technology Solutions</title>
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ScottsTechX Enterprise (U) Ltd">
+<meta property="og:description" content="Secure software, cloud, cybersecurity, AI, and digital transformation solutions for East African enterprises.">
+<meta property="og:image" content="social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ScottsTechX Enterprise company logo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ScottsTechX Enterprise (U) Ltd">
+<meta name="twitter:description" content="Secure technology solutions engineered for modern enterprises.">
+<meta name="twitter:image" content="social-card.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" referrerpolicy="no-referrer">
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js" referrerpolicy="no-referrer"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        royal: '#0056D2',
+        navy: '#0A192F',
+        cyan: '#00B8D9',
+        slate: { 850: '#0F172A' }
+      },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+      }
+    }
+  }
+}
+</script>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: #ffffff; color: #1E293B; -webkit-font-smoothing: antialiased; }
+  h1,h2,h3,h4,h5,h6 { font-family: 'Poppins', sans-serif; }
+  ::selection { background: #0056D2; color: #fff; }
+
+  /* ── Glassmorphism utilities ── */
+  .glass { background: rgba(255,255,255,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.3); }
+  .glass-dark { background: rgba(10,25,47,0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+  .glass-card { background: rgba(255,255,255,0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.5); box-shadow: 0 8px 32px rgba(0,84,210,0.08); }
+
+  /* ── Animations ── */
+  @keyframes fadeUp { from { opacity:0; transform:translateY(32px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  @keyframes slideLeft { from { opacity:0; transform:translateX(48px); } to { opacity:1; transform:translateX(0); } }
+  @keyframes slideRight { from { opacity:0; transform:translateX(-48px); } to { opacity:1; transform:translateX(0); } }
+  @keyframes scaleIn { from { opacity:0; transform:scale(0.92); } to { opacity:1; transform:scale(1); } }
+  @keyframes float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-12px); } }
+  @keyframes pulse-ring { 0% { transform:scale(0.9); opacity:1; } 100% { transform:scale(1.5); opacity:0; } }
+  @keyframes rotate { from { transform:rotate(0deg); } to { transform:rotate(360deg); } }
+  @keyframes marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+  @keyframes countUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes shimmer { 0% { background-position:-200% center; } 100% { background-position:200% center; } }
+  @keyframes ripple { 0% { transform:scale(1); opacity:0.4; } 100% { transform:scale(4); opacity:0; } }
+
+  .animate-fade-up { animation: fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) both; }
+  .animate-fade-in { animation: fadeIn 0.6s ease both; }
+  .animate-slide-left { animation: slideLeft 0.7s cubic-bezier(0.16,1,0.3,1) both; }
+  .animate-slide-right { animation: slideRight 0.7s cubic-bezier(0.16,1,0.3,1) both; }
+  .animate-scale-in { animation: scaleIn 0.6s cubic-bezier(0.16,1,0.3,1) both; }
+  .animate-float { animation: float 4s ease-in-out infinite; }
+  .animate-marquee { animation: marquee 30s linear infinite; }
+  .animate-rotate { animation: rotate 8s linear infinite; }
+
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+  .delay-600 { animation-delay: 600ms; }
+
+  /* Scroll-reveal */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── Page transitions ── */
+  .page { display: none; opacity: 0; }
+  .page.active { display: block; animation: fadeIn 0.4s ease both; }
+
+  /* ── Custom scrollbar ── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #F5F7FA; }
+  ::-webkit-scrollbar-thumb { background: #0056D2; border-radius: 3px; }
+
+  /* ── Gradient text ── */
+  .gradient-text { background: linear-gradient(135deg, #0056D2, #00B8D9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+  /* ── Button styles ── */
+  .btn-primary { background: linear-gradient(135deg, #0056D2, #0041A8); color: white; font-family: 'Poppins', sans-serif; font-weight: 600; padding: 14px 32px; border-radius: 12px; border: none; cursor: pointer; transition: all 0.3s; position: relative; overflow: hidden; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,86,210,0.35); }
+  .btn-primary:active { transform: translateY(0); }
+  .btn-outline { background: transparent; color: #0056D2; font-family: 'Poppins', sans-serif; font-weight: 600; padding: 13px 31px; border-radius: 12px; border: 2px solid #0056D2; cursor: pointer; transition: all 0.3s; }
+  .btn-outline:hover { background: #0056D2; color: white; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,86,210,0.25); }
+
+  /* ── Card hover effects ── */
+  .card-hover { transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s; }
+  .card-hover:hover { transform: translateY(-8px); box-shadow: 0 24px 64px rgba(0,86,210,0.15); }
+
+  /* ── Nav link underline ── */
+  .nav-link { position: relative; }
+  .nav-link::after { content:''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #0056D2; transition: width 0.3s; }
+  .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+  /* ── Accordion ── */
+  .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .accordion-content.open { max-height: 400px; }
+
+  /* ── Tab content ── */
+  .tab-pane { display: none; }
+  .tab-pane.active { display: block; }
+
+  /* ── Counter ── */
+  .stat-number { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 3rem; background: linear-gradient(135deg, #0056D2, #00B8D9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+  /* ── Hero background shapes ── */
+  .hero-blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.12; }
+  .hero-blob-1 { width: 600px; height: 600px; background: #0056D2; top: -200px; right: -100px; }
+  .hero-blob-2 { width: 400px; height: 400px; background: #00B8D9; bottom: -100px; left: -50px; }
+
+  /* ── Testimonial card ── */
+  .testimonial-card { position: relative; }
+  .testimonial-card::before { content: '"'; position: absolute; top: -20px; left: 24px; font-size: 120px; font-family: 'Poppins', sans-serif; color: rgba(0,86,210,0.08); line-height: 1; pointer-events: none; }
+
+  /* ── Mobile menu ── */
+  #mobile-menu { transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); }
+  #mobile-menu.open { transform: translateX(0); }
+
+  /* ── Grid pattern ── */
+  .grid-pattern { background-image: radial-gradient(circle, rgba(0,86,210,0.06) 1px, transparent 1px); background-size: 32px 32px; }
+
+  /* ── Tech badge ── */
+  .tech-badge { background: rgba(0,86,210,0.06); border: 1px solid rgba(0,86,210,0.15); border-radius: 8px; padding: 4px 12px; font-size: 12px; font-weight: 500; color: #0056D2; display: inline-block; }
+
+  /* ── Progress bar ── */
+  .progress-bar { height: 4px; background: linear-gradient(90deg, #0056D2, #00B8D9); border-radius: 2px; width: 0; transition: width 1.2s cubic-bezier(0.16,1,0.3,1); }
+
+  /* ── Ripple button effect ── */
+  .ripple { position: relative; overflow: hidden; }
+  .ripple-effect { position: absolute; border-radius: 50%; background: rgba(255,255,255,0.4); width: 10px; height: 10px; transform: scale(0); animation: ripple 0.6s linear; pointer-events: none; }
+
+  /* ── Hero 3D orbit animations ── */
+  .animate-spin-slow { animation: spinSlow 12s linear infinite; }
+  .animate-spin-slow-reverse { animation: spinSlowReverse 18s linear infinite; }
+  .animate-pulse-glow { animation: pulseGlow 3s ease-in-out infinite; }
+  .animate-orbit-electron { animation: orbitElectron 4s linear infinite; }
+
+  @keyframes spinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  @keyframes spinSlowReverse { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 20px rgba(0,86,210,0.4), 0 0 40px rgba(0,86,210,0.2); }
+    50% { box-shadow: 0 0 40px rgba(0,184,217,0.6), 0 0 80px rgba(0,184,217,0.3); }
+  }
+  @keyframes orbitElectron {
+    0%   { transform: rotate(0deg) translateX(96px) rotate(0deg); top: 50%; left: 50%; margin: -5px 0 0 -5px; }
+    100% { transform: rotate(360deg) translateX(96px) rotate(-360deg); top: 50%; left: 50%; margin: -5px 0 0 -5px; }
+  }
+
+  /* ── Tech section background ── */
+  .tech-bg-canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+
+  /* ── Chat widget ── */
+  #chat-widget { font-family: 'Inter', sans-serif; }
+  #chat-widget * { box-sizing: border-box; margin: 0; padding: 0; }
+  #chat-toggle {
+    position: fixed; bottom: 24px; right: 24px; z-index: 9999;
+    width: 60px; height: 60px; border-radius: 50%;
+    background: linear-gradient(135deg, #0056D2, #00B8D9);
+    border: none; cursor: pointer; box-shadow: 0 4px 20px rgba(0,86,210,0.45);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  #chat-toggle:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(0,86,210,0.55); }
+  #chat-toggle svg { width: 28px; height: 28px; fill: white; }
+  #chat-window {
+    position: fixed; bottom: 96px; right: 24px; z-index: 9998;
+    width: 390px; max-width: calc(100vw - 48px); height: 580px;
+    max-height: calc(100vh - 140px);
+    background: #0A192F; border-radius: 20px; overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+    display: none; flex-direction: column;
+    border: 1px solid rgba(0,184,217,0.2);
+  }
+  #chat-window.open { display: flex; }
+  #chat-header {
+    background: linear-gradient(135deg, #0056D2, #00B8D9);
+    padding: 16px 20px; display: flex; align-items: center; gap: 12px;
+    flex-shrink: 0;
+  }
+  #chat-header img { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.15); }
+  #chat-header-text { flex: 1; }
+  #chat-header-text h3 { color: white; font-size: 15px; font-weight: 700; }
+  #chat-header-text p { color: rgba(255,255,255,0.7); font-size: 11px; }
+  #chat-close {
+    background: none; border: none; cursor: pointer; padding: 4px;
+    border-radius: 8px; color: white; opacity: 0.7; transition: opacity 0.15s;
+  }
+  #chat-close:hover { opacity: 1; }
+  #chat-messages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+  #chat-messages::-webkit-scrollbar { width: 4px; }
+  #chat-messages::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+  .chat-msg { max-width: 80%; padding: 10px 14px; border-radius: 16px; font-size: 14px; line-height: 1.5; animation: msgIn 0.2s ease; }
+  @keyframes msgIn { from { opacity: 0; transform: translateY(8px); } }
+  .chat-msg.assistant { background: rgba(255,255,255,0.07); color: #E2E8F0; align-self: flex-start; border-bottom-left-radius: 4px; }
+  .chat-msg.user { background: linear-gradient(135deg, #0056D2, #00B8D9); color: white; align-self: flex-end; border-bottom-right-radius: 4px; }
+  .chat-time { font-size: 10px; color: rgba(255,255,255,0.35); margin-top: 4px; text-align: right; }
+  .chat-typing { color: rgba(255,255,255,0.4); font-size: 13px; font-style: italic; padding: 8px 4px; align-self: flex-start; }
+  #chat-input-area { padding: 12px 16px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; gap: 8px; flex-shrink: 0; }
+  #chat-input { flex: 1; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 10px 14px; color: white; font-size: 14px; outline: none; resize: none; max-height: 80px; transition: border-color 0.2s; }
+  #chat-input::placeholder { color: rgba(255,255,255,0.35); }
+  #chat-input:focus { border-color: rgba(0,184,217,0.5); }
+  #chat-send { background: linear-gradient(135deg, #0056D2, #00B8D9); border: none; border-radius: 12px; width: 42px; height: 42px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: opacity 0.2s; }
+  #chat-send:hover { opacity: 0.85; }
+  #chat-send:disabled { opacity: 0.4; cursor: not-allowed; }
+  #chat-send svg { width: 18px; height: 18px; fill: white; }
+  #chat-badge {
+    position: absolute; top: -4px; right: -4px;
+    width: 20px; height: 20px; border-radius: 50%;
+    background: #ff4757; color: white; font-size: 11px; font-weight: 700;
+    display: none; align-items: center; justify-content: center;
+  }
+  .skip-link {
+    position: fixed; left: 1rem; top: 1rem; z-index: 10000;
+    padding: 0.75rem 1rem; border-radius: 0.75rem;
+    background: #0A192F; color: #fff; font-weight: 700;
+    transform: translateY(-200%); transition: transform 0.2s;
+  }
+  .skip-link:focus { transform: translateY(0); }
+  :focus-visible { outline: 3px solid #00B8D9; outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0056D2">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ScottsTechX">
+</head>
+<body class="font-inter text-slate-800">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ══════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════ -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white/95 backdrop-blur-md shadow-sm">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo -->
+      <a href="#home" class="flex items-center gap-3 group">
+        <img src="brand-mark.png" alt="" width="44" height="44" class="rounded-xl object-cover transition-transform group-hover:scale-105">
+        <div>
+          <span class="font-poppins font-bold text-lg text-navy leading-tight block">ScottsTechX</span>
+          <span class="text-[10px] text-slate-400 font-inter tracking-wider uppercase">Enterprise (U) Ltd</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="#home" class="nav-link text-sm font-medium text-slate-600 hover:text-royal transition-colors">Home</a>
+        <a href="#about" class="nav-link text-sm font-medium text-slate-600 hover:text-royal transition-colors">About</a>
+        <a href="#services" class="nav-link text-sm font-medium text-slate-600 hover:text-royal transition-colors">Services</a>
+        <a href="#sentinel" class="nav-link text-sm font-medium text-slate-600 hover:text-royal transition-colors">Sentinel AI</a>
+        <a href="#portfolio" class="nav-link text-sm font-medium text-slate-600 hover:text-royal transition-colors">Portfolio</a>
+        <a href="#industries" class="nav-link text-sm font-medium text-slate-600 hover:text-royal transition-colors">Industries</a>
+        <a href="#blog" class="nav-link text-sm font-medium text-slate-600 hover:text-royal transition-colors">Blog</a>
+        <a href="#careers" class="nav-link text-sm font-medium text-slate-600 hover:text-royal transition-colors">Careers</a>
+        <a href="#contact" class="btn-primary text-sm py-3 px-6">Get a Quote</a>
+      </div>
+
+      <!-- Mobile toggle -->
+      <button id="menu-toggle" aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false" class="lg:hidden w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center cursor-pointer" onclick="toggleMobileMenu()">
+        <svg id="menu-icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A192F" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <svg id="menu-icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A192F" stroke-width="2" stroke-linecap="round" class="hidden"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="fixed inset-0 z-40 glass-dark lg:hidden" style="display:none;">
+  <div class="flex flex-col h-full pt-24 px-8 gap-6">
+    <a href="#home" class="text-2xl font-poppins font-semibold text-white" onclick="toggleMobileMenu()">Home</a>
+    <a href="#about" class="text-2xl font-poppins font-semibold text-white" onclick="toggleMobileMenu()">About</a>
+    <a href="#services" class="text-2xl font-poppins font-semibold text-white" onclick="toggleMobileMenu()">Services</a>
+    <a href="#sentinel" class="text-2xl font-poppins font-semibold text-white" onclick="toggleMobileMenu()">Sentinel AI</a>
+    <a href="#portfolio" class="text-2xl font-poppins font-semibold text-white" onclick="toggleMobileMenu()">Portfolio</a>
+    <a href="#industries" class="text-2xl font-poppins font-semibold text-white" onclick="toggleMobileMenu()">Industries</a>
+    <a href="#blog" class="text-2xl font-poppins font-semibold text-white" onclick="toggleMobileMenu()">Blog</a>
+    <a href="#careers" class="text-2xl font-poppins font-semibold text-white" onclick="toggleMobileMenu()">Careers</a>
+    <a href="#contact" class="btn-primary text-center mt-4" onclick="toggleMobileMenu()">Get a Quote</a>
+    <div class="mt-auto pb-12">
+      <p class="text-slate-400 text-sm">scottstechx@gmail.com</p>
+      <p class="text-slate-400 text-sm">+256 740396825</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE: HOME
+══════════════════════════════════════ -->
+<main id="main-content">
+<div id="page-home" class="page active">
+
+  <!-- Hero -->
+  <section id="home" class="relative min-h-screen flex items-center overflow-hidden">
+    <!-- Three.js animated background -->
+    <canvas id="hero-bg-canvas" class="absolute inset-0 w-full h-full -z-10"></canvas>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-20 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 rounded-full px-4 py-2 mb-8 animate-fade-up">
+            <span class="w-2 h-2 rounded-full bg-cyan animate-pulse"></span>
+            <span class="text-sm font-medium text-royal">Uganda's Trusted Tech Partner</span>
+          </div>
+          <h1 class="font-poppins font-extrabold text-5xl lg:text-7xl text-navy leading-tight mb-6 animate-fade-up delay-100">
+            Empowering Businesses Through<br>
+            <span class="gradient-text">Innovative Technology</span>
+          </h1>
+          <p class="text-lg text-slate-500 leading-relaxed mb-10 max-w-xl animate-fade-up delay-200">
+            Delivering reliable software, cloud, cybersecurity, networking, AI, and digital transformation solutions across Uganda and beyond.
+          </p>
+          <div class="flex flex-wrap gap-4 animate-fade-up delay-300">
+            <button class="btn-primary flex items-center gap-2" onclick="navigateTo('contact')">
+              Get Started
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <button class="btn-outline" onclick="navigateTo('services')">Request a Quote</button>
+          </div>
+          <!-- Trust badges -->
+          <div class="flex items-center gap-6 mt-12 animate-fade-up delay-400">
+            <div class="flex -space-x-3">
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 border-2 border-white flex items-center justify-center text-white text-xs font-bold">JM</div>
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 border-2 border-white flex items-center justify-center text-white text-xs font-bold">AK</div>
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-cyan-600 border-2 border-white flex items-center justify-center text-white text-xs font-bold">RS</div>
+            </div>
+            <div>
+              <div class="flex items-center gap-1 mb-1">
+                <span class="text-amber-400 text-sm">★★★★★</span>
+                <span class="text-sm font-semibold text-navy">5.0</span>
+              </div>
+              <p class="text-xs text-slate-400">Trusted by 10+ businesses</p>
+            </div>
+          </div>
+        </div>
+        <!-- Hero 3D animation panel -->
+        <div class="relative hidden lg:block animate-scale-in delay-200">
+          <div class="relative w-full aspect-square">
+            <!-- CSS 3D tech panel -->
+            <div class="absolute inset-8 rounded-3xl bg-gradient-to-br from-royal/8 to-cyan/8 border border-blue-200/50 flex items-center justify-center overflow-hidden">
+              <!-- Orbiting dots -->
+              <div class="relative w-48 h-48">
+                <div class="orbit-ring absolute inset-0 rounded-full border border-royal/20 animate-spin-slow"></div>
+                <div class="orbit-ring orbit-ring-2 absolute inset-4 rounded-full border border-cyan/30 animate-spin-slow-reverse"></div>
+                <div class="orbit-ring orbit-ring-3 absolute inset-8 rounded-full border border-royal/15 animate-spin-slow"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-royal to-cyan flex items-center justify-center shadow-2xl shadow-royal/30 animate-pulse-glow">
+                    <img src="brand-mark.png" alt="" width="56" height="56" class="rounded-xl">
+                  </div>
+                </div>
+                <!-- Orbital electrons -->
+                <div class="electron absolute w-2.5 h-2.5 rounded-full bg-cyan shadow-glow animate-orbit-electron"></div>
+              </div>
+            </div>
+          <!-- Floating cards overlay -->
+          <div class="absolute top-4 right-0 glass-card rounded-xl p-4 animate-fade-in delay-500">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-navy">System Online</p>
+                <p class="text-[10px] text-slate-400">99.9% uptime</p>
+              </div>
+            </div>
+          </div>
+          <div class="absolute bottom-12 left-0 glass-card rounded-xl p-4 animate-fade-in delay-600">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0056D2" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-navy">50+ Projects</p>
+                <p class="text-[10px] text-slate-400">Delivered</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-in delay-600">
+      <span class="text-xs text-slate-400 uppercase tracking-widest">Scroll</span>
+      <div class="w-5 h-8 rounded-full border-2 border-slate-300 flex justify-center pt-1">
+        <div class="w-1 h-2 rounded-full bg-slate-400 animate-bounce"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trusted Technologies Marquee -->
+  <!-- Tech Strip: animated 3D-style cards -->
+  <section class="py-16 bg-navy overflow-hidden relative">
+    <div class="absolute inset-0 overflow-hidden">
+      <!-- Floating 3D geometric shapes -->
+      <div class="tech-shape tech-shape-1"></div>
+      <div class="tech-shape tech-shape-2"></div>
+      <div class="tech-shape tech-shape-3"></div>
+      <div class="tech-shape tech-shape-4"></div>
+    </div>
+    <div class="relative z-10 overflow-hidden">
+      <!-- Layer 1: Tech card marquee (forward) -->
+      <div class="flex animate-marquee mb-8">
+        <div class="flex items-center gap-6 px-8 whitespace-nowrap">
+          <div class="tech-card flex items-center gap-3 bg-royal/15 border border-royal/25 rounded-xl px-5 py-3">
+            <div class="w-9 h-9 rounded-lg bg-royal/30 flex items-center justify-center text-cyan text-sm font-bold">01</div>
+            <div><p class="text-white font-poppins font-semibold text-sm">Custom Software</p><p class="text-slate-400 text-xs">End-to-end development</p></div>
+          </div>
+          <div class="tech-card flex items-center gap-3 bg-cyan/10 border border-cyan/25 rounded-xl px-5 py-3">
+            <div class="w-9 h-9 rounded-lg bg-cyan/20 flex items-center justify-center text-cyan text-sm font-bold">02</div>
+            <div><p class="text-white font-poppins font-semibold text-sm">Cloud Solutions</p><p class="text-slate-400 text-xs">AWS, Azure, GCP</p></div>
+          </div>
+          <div class="tech-card flex items-center gap-3 bg-royal/15 border border-royal/25 rounded-xl px-5 py-3">
+            <div class="w-9 h-9 rounded-lg bg-royal/30 flex items-center justify-center text-cyan text-sm font-bold">03</div>
+            <div><p class="text-white font-poppins font-semibold text-sm">Cybersecurity</p><p class="text-slate-400 text-xs">Pen testing &amp; compliance</p></div>
+          </div>
+          <div class="tech-card flex items-center gap-3 bg-cyan/10 border border-cyan/25 rounded-xl px-5 py-3">
+            <div class="w-9 h-9 rounded-lg bg-cyan/20 flex items-center justify-center text-cyan text-sm font-bold">04</div>
+            <div><p class="text-white font-poppins font-semibold text-sm">AI &amp; Automation</p><p class="text-slate-400 text-xs">LLMs, agents, pipelines</p></div>
+          </div>
+          <div class="tech-card flex items-center gap-3 bg-royal/15 border border-royal/25 rounded-xl px-5 py-3">
+            <div class="w-9 h-9 rounded-lg bg-royal/30 flex items-center justify-center text-cyan text-sm font-bold">05</div>
+            <div><p class="text-white font-poppins font-semibold text-sm">Networking</p><p class="text-slate-400 text-xs">Enterprise infrastructure</p></div>
+          </div>
+          <div class="tech-card flex items-center gap-3 bg-cyan/10 border border-cyan/25 rounded-xl px-5 py-3">
+            <div class="w-9 h-9 rounded-lg bg-cyan/20 flex items-center justify-center text-cyan text-sm font-bold">06</div>
+            <div><p class="text-white font-poppins font-semibold text-sm">Mobile Apps</p><p class="text-slate-400 text-xs">iOS, Android, cross-platform</p></div>
+          </div>
+          <!-- Duplicate for seamless loop -->
+          <div class="tech-card flex items-center gap-3 bg-royal/15 border border-royal/25 rounded-xl px-5 py-3">
+            <div class="w-9 h-9 rounded-lg bg-royal/30 flex items-center justify-center text-cyan text-sm font-bold">01</div>
+            <div><p class="text-white font-poppins font-semibold text-sm">Custom Software</p><p class="text-slate-400 text-xs">End-to-end development</p></div>
+          </div>
+          <div class="tech-card flex items-center gap-3 bg-cyan/10 border border-cyan/25 rounded-xl px-5 py-3">
+            <div class="w-9 h-9 rounded-lg bg-cyan/20 flex items-center justify-center text-cyan text-sm font-bold">02</div>
+            <div><p class="text-white font-poppins font-semibold text-sm">Cloud Solutions</p><p class="text-slate-400 text-xs">AWS, Azure, GCP</p></div>
+          </div>
+          <div class="tech-card flex items-center gap-3 bg-royal/15 border border-royal/25 rounded-xl px-5 py-3">
+            <div class="w-9 h-9 rounded-lg bg-royal/30 flex items-center justify-center text-cyan text-sm font-bold">03</div>
+            <div><p class="text-white font-poppins font-semibold text-sm">Cybersecurity</p><p class="text-slate-400 text-xs">Pen testing &amp; compliance</p></div>
+          </div>
+          <div class="tech-card flex items-center gap-3 bg-cyan/10 border border-cyan/25 rounded-xl px-5 py-3">
+            <div class="w-9 h-9 rounded-lg bg-cyan/20 flex items-center justify-center text-cyan text-sm font-bold">04</div>
+            <div><p class="text-white font-poppins font-semibold text-sm">AI &amp; Automation</p><p class="text-slate-400 text-xs">LLMs, agents, pipelines</p></div>
+          </div>
+          <div class="tech-card flex items-center gap-3 bg-royal/15 border border-royal/25 rounded-xl px-5 py-3">
+            <div class="w-9 h-9 rounded-lg bg-royal/30 flex items-center justify-center text-cyan text-sm font-bold">05</div>
+            <div><p class="text-white font-poppins font-semibold text-sm">Networking</p><p class="text-slate-400 text-xs">Enterprise infrastructure</p></div>
+          </div>
+          <div class="tech-card flex items-center gap-3 bg-cyan/10 border border-cyan/25 rounded-xl px-5 py-3">
+            <div class="w-9 h-9 rounded-lg bg-cyan/20 flex items-center justify-center text-cyan text-sm font-bold">06</div>
+            <div><p class="text-white font-poppins font-semibold text-sm">Mobile Apps</p><p class="text-slate-400 text-xs">iOS, Android, cross-platform</p></div>
+          </div>
+        </div>
+      </div>
+      <!-- Layer 2: Skill tag marquee (reverse) -->
+      <div class="flex animate-marquee-reverse">
+        <div class="flex items-center gap-8 px-8 whitespace-nowrap">
+          <span class="text-slate-400 font-inter font-medium text-xs tracking-widest uppercase">React</span>
+          <span class="text-cyan/60">◆</span>
+          <span class="text-slate-400 font-inter font-medium text-xs tracking-widest uppercase">Next.js</span>
+          <span class="text-cyan/60">◆</span>
+          <span class="text-slate-400 font-inter font-medium text-xs tracking-widest uppercase">Python</span>
+          <span class="text-cyan/60">◆</span>
+          <span class="text-slate-400 font-inter font-medium text-xs tracking-widest uppercase">AWS</span>
+          <span class="text-cyan/60">◆</span>
+          <span class="text-slate-400 font-inter font-medium text-xs tracking-widest uppercase">Azure</span>
+          <span class="text-cyan/60">◆</span>
+          <span class="text-slate-400 font-inter font-medium text-xs tracking-widest uppercase">Docker</span>
+          <span class="text-cyan/60">◆</span>
+          <span class="text-slate-400 font-inter font-medium text-xs tracking-widest uppercase">Kubernetes</span>
+          <span class="text-cyan/60">◆</span>
+          <span class="text-slate-400 font-inter font-medium text-xs tracking-widest uppercase">PostgreSQL</span>
+          <span class="text-cyan/60">◆</span>
+          <span class="text-slate-400 font-inter font-medium text-xs tracking-widest uppercase">TensorFlow</span>
+          <span class="text-cyan/60">◆</span>
+          <span class="text-slate-400 font-inter font-medium text-xs tracking-widest uppercase">Figma</span>
+          <span class="text-cyan/60">◆</span>
+          <span class="text-slate-400 font-inter font-medium text-xs tracking-widest uppercase">TypeScript</span>
+          <span class="text-cyan/60">◆</span>
+          <span class="text-slate-400 font-inter font-medium text-xs tracking-widest uppercase">Go</span>
+          <span class="text-cyan/60">◆</span>
+          <span class="text-slate-400 font-inter font-medium text-xs tracking-widest uppercase">Rust</span>
+          <span class="text-cyan/60">◆</span>
+          <span class="text-slate-400 font-inter font-medium text-xs tracking-widest uppercase">React</span>
+          <span class="text-cyan/60">◆</span>
+          <span class="text-slate-400 font-inter font-medium text-xs tracking-widest uppercase">Next.js</span>
+          <span class="text-cyan/60">◆</span>
+          <span class="text-slate-400 font-inter font-medium text-xs tracking-widest uppercase">Python</span>
+          <span class="text-cyan/60">◆</span>
+          <span class="text-slate-400 font-inter font-medium text-xs tracking-widest uppercase">AWS</span>
+          <span class="text-cyan/60">◆</span>
+          <span class="text-slate-400 font-inter font-medium text-xs tracking-widest uppercase">Azure</span>
+          <span class="text-cyan/60">◆</span>
+          <span class="text-slate-400 font-inter font-medium text-xs tracking-widest uppercase">Docker</span>
+          <span class="text-cyan/60">◆</span>
+          <span class="text-slate-400 font-inter font-medium text-xs tracking-widest uppercase">Kubernetes</span>
+          <span class="text-cyan/60">◆</span>
+          <span class="text-slate-400 font-inter font-medium text-xs tracking-widest uppercase">PostgreSQL</span>
+          <span class="text-cyan/60">◆</span>
+          <span class="text-slate-400 font-inter font-medium text-xs tracking-widest uppercase">TensorFlow</span>
+          <span class="text-cyan/60">◆</span>
+          <span class="text-slate-400 font-inter font-medium text-xs tracking-widest uppercase">Figma</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .tech-shape {
+      position: absolute; border-radius: 8px; opacity: 0.06;
+    }
+    .tech-shape-1 {
+      width: 300px; height: 300px; background: #0056D2;
+      top: -80px; left: -60px;
+      transform: rotate(25deg);
+      animation: floatShape1 14s ease-in-out infinite;
+    }
+    .tech-shape-2 {
+      width: 200px; height: 200px; background: #00B8D9;
+      top: 20px; right: -40px;
+      border-radius: 50%;
+      animation: floatShape2 18s ease-in-out infinite;
+    }
+    .tech-shape-3 {
+      width: 150px; height: 150px; background: #0056D2;
+      bottom: -40px; left: 30%;
+      transform: rotate(45deg);
+      animation: floatShape3 12s ease-in-out infinite;
+    }
+    .tech-shape-4 {
+      width: 80px; height: 80px; background: #00B8D9;
+      bottom: 10px; right: 20%;
+      border-radius: 50%;
+      animation: floatShape2 16s ease-in-out infinite reverse;
+    }
+    @keyframes floatShape1 {
+      0%, 100% { transform: rotate(25deg) translateY(0); }
+      50% { transform: rotate(30deg) translateY(-20px); }
+    }
+    @keyframes floatShape2 {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-30px) scale(1.05); }
+    }
+    @keyframes floatShape3 {
+      0%, 100% { transform: rotate(45deg) translateY(0); }
+      50% { transform: rotate(55deg) translateY(-15px); }
+    }
+    .animate-marquee-reverse {
+      animation: marquee 40s linear infinite reverse;
+    }
+    .tech-card {
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .tech-card:hover {
+      border-color: rgba(0,184,217,0.5);
+      background: rgba(0,184,217,0.1);
+    }
+  </style>
+
+  <!-- Services Overview -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <span class="text-cyan font-inter font-semibold text-sm uppercase tracking-widest">What We Do</span>
+        <h2 class="font-poppins font-extrabold text-4xl lg:text-5xl text-navy mt-3 mb-4">Our Services</h2>
+        <p class="text-slate-500 max-w-2xl mx-auto text-lg">End-to-end technology solutions built for the demands of modern businesses in Uganda and across Africa.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service cards -->
+        <div class="glass-card rounded-2xl p-8 card-hover reveal">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-royal to-cyan flex items-center justify-center mb-6 shadow-lg shadow-royal/20">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round"><path d="M8 6H21M8 12H21M8 18H21M3 6H3a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H3"/></svg>
+          </div>
+          <h3 class="font-poppins font-bold text-xl text-navy mb-3">Software Development</h3>
+          <p class="text-slate-500 text-sm leading-relaxed mb-4">Custom software built to your exact specification. Web apps, enterprise systems, and APIs designed for scale.</p>
+          <a href="#services" class="text-royal font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+        <div class="glass-card rounded-2xl p-8 card-hover reveal delay-100">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center mb-6 shadow-lg shadow-purple-500/20">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <h3 class="font-poppins font-bold text-xl text-navy mb-3">Website Development</h3>
+          <p class="text-slate-500 text-sm leading-relaxed mb-4">Modern, responsive websites that load fast, rank well, and convert visitors into customers.</p>
+          <a href="#services" class="text-royal font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+        <div class="glass-card rounded-2xl p-8 card-hover reveal delay-200">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500 to-rose-700 flex items-center justify-center mb-6 shadow-lg shadow-rose-500/20">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+          </div>
+          <h3 class="font-poppins font-bold text-xl text-navy mb-3">Mobile App Development</h3>
+          <p class="text-slate-500 text-sm leading-relaxed mb-4">Native and cross-platform mobile apps for Android and iOS. From concept to Play Store deployment.</p>
+          <a href="#services" class="text-royal font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+        <div class="glass-card rounded-2xl p-8 card-hover reveal">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center mb-6 shadow-lg shadow-amber-500/20">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round"><path d="M12 2a5 5 0 0 1 5 5v4a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"/><path d="M2 21a10 10 0 0 1 20 0"/></svg>
+          </div>
+          <h3 class="font-poppins font-bold text-xl text-navy mb-3">Cloud Solutions</h3>
+          <p class="text-slate-500 text-sm leading-relaxed mb-4">AWS, Azure, and Google Cloud architecture, migration, and management. Scale without limits.</p>
+          <a href="#services" class="text-royal font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+        <div class="glass-card rounded-2xl p-8 card-hover reveal delay-100">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center mb-6 shadow-lg shadow-red-500/20">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="font-poppins font-bold text-xl text-navy mb-3">Cybersecurity</h3>
+          <p class="text-slate-500 text-sm leading-relaxed mb-4">Penetration testing, vulnerability assessments, security audits, and incident response for peace of mind.</p>
+          <a href="#sentinel" class="text-royal font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">Explore Sentinel AI <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+        <div class="glass-card rounded-2xl p-8 card-hover reveal delay-200">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center mb-6 shadow-lg shadow-emerald-500/20">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round"><path d="M5 12H3a9 9 0 0 0 9 9 9 9 0 0 0 9-9h-2"/><path d="M12 3a9 9 0 0 0-9 9 9 9 0 0 0 9 9 9 9 0 0 0 9-9h-2"/><path d="M5 12h14"/></svg>
+          </div>
+          <h3 class="font-poppins font-bold text-xl text-navy mb-3">IT Consulting</h3>
+          <p class="text-slate-500 text-sm leading-relaxed mb-4">Strategic technology advisory. We help you make the right decisions at every stage of your digital journey.</p>
+          <a href="#services" class="text-royal font-semibold text-sm flex items-center gap-1 hover:gap-2 transition-all">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <div class="text-center mt-12">
+        <button class="btn-primary" onclick="navigateTo('services')">View All Services</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-24 bg-gradient-to-b from-navy to-slate-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 grid-pattern opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="reveal">
+          <span class="text-cyan font-inter font-semibold text-sm uppercase tracking-widest">Why ScottsTechX</span>
+          <h2 class="font-poppins font-extrabold text-4xl lg:text-5xl mt-3 mb-6">Built Different.<br>Built to Last.</h2>
+          <p class="text-slate-400 text-lg leading-relaxed mb-10">We're not just developers — we're technology partners invested in your long-term success. Our team combines deep technical expertise with genuine business understanding.</p>
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-xl bg-royal/20 border border-royal/30 flex items-center justify-center flex-shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00B8D9" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              </div>
+              <div>
+                <h4 class="font-poppins font-semibold text-lg mb-1">End-to-End Delivery</h4>
+                <p class="text-slate-400 text-sm">From initial discovery to production deployment and ongoing support — we stay with you.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-xl bg-royal/20 border border-royal/30 flex items-center justify-center flex-shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00B8D9" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div>
+                <h4 class="font-poppins font-semibold text-lg mb-1">Dedicated Teams</h4>
+                <p class="text-slate-400 text-sm">Your project gets focused attention from senior engineers — not rotated junior staff.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-xl bg-royal/20 border border-royal/30 flex items-center justify-center flex-shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00B8D9" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <h4 class="font-poppins font-semibold text-lg mb-1">Security-First Approach</h4>
+                <p class="text-slate-400 text-sm">Every project is built with security woven in from the start — not bolted on afterwards.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Stats grid -->
+        <div class="grid grid-cols-2 gap-6 reveal delay-200">
+          <div class="glass rounded-2xl p-8 text-center">
+            <div class="stat-number text-5xl mb-2" data-target="50">0</div>
+            <p class="text-slate-400 text-sm font-medium">Projects Delivered</p>
+          </div>
+          <div class="glass rounded-2xl p-8 text-center">
+            <div class="stat-number text-5xl mb-2" data-target="30">0</div>
+            <p class="text-slate-400 text-sm font-medium">Happy Clients</p>
+          </div>
+          <div class="glass rounded-2xl p-8 text-center">
+            <div class="stat-number text-5xl mb-2" data-target="99">0</div>
+            <p class="text-slate-400 text-sm font-medium">% Uptime Guarantee</p>
+          </div>
+          <div class="glass rounded-2xl p-8 text-center">
+            <div class="stat-number text-5xl mb-2" data-target="24">0</div>
+            <p class="text-slate-400 text-sm font-medium">/7 Support</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries Served -->
+  <section class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <span class="text-cyan font-inter font-semibold text-sm uppercase tracking-widest">Industries</span>
+        <h2 class="font-poppins font-extrabold text-4xl lg:text-5xl text-navy mt-3 mb-4">Solutions for Every Sector</h2>
+        <p class="text-slate-500 max-w-2xl mx-auto text-lg">We've delivered transformative technology across a wide range of industries in Uganda and across East Africa.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div class="bg-white rounded-2xl p-6 text-center card-hover reveal border border-slate-100">
+          <div class="text-4xl mb-3">🎓</div>
+          <p class="font-poppins font-semibold text-navy text-sm">Education</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 text-center card-hover reveal delay-100 border border-slate-100">
+          <div class="text-4xl mb-3">🏥</div>
+          <p class="font-poppins font-semibold text-navy text-sm">Healthcare</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 text-center card-hover reveal delay-200 border border-slate-100">
+          <div class="text-4xl mb-3">🏛️</div>
+          <p class="font-poppins font-semibold text-navy text-sm">Government</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 text-center card-hover reveal delay-300 border border-slate-100">
+          <div class="text-4xl mb-3">🏦</div>
+          <p class="font-poppins font-semibold text-navy text-sm">Finance</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 text-center card-hover reveal border border-slate-100">
+          <div class="text-4xl mb-3">🏭</div>
+          <p class="font-poppins font-semibold text-navy text-sm">Manufacturing</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 text-center card-hover reveal delay-100 border border-slate-100">
+          <div class="text-4xl mb-3">🏪</div>
+          <p class="font-poppins font-semibold text-navy text-sm">Retail</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 text-center card-hover reveal delay-200 border border-slate-100">
+          <div class="text-4xl mb-3">🌾</div>
+          <p class="font-poppins font-semibold text-navy text-sm">Agriculture</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 text-center card-hover reveal delay-300 border border-slate-100">
+          <div class="text-4xl mb-3">🚚</div>
+          <p class="font-poppins font-semibold text-navy text-sm">Logistics</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 text-center card-hover reveal border border-slate-100">
+          <div class="text-4xl mb-3">🏨</div>
+          <p class="font-poppins font-semibold text-navy text-sm">Hospitality</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 text-center card-hover reveal delay-100 border border-slate-100">
+          <div class="text-4xl mb-3">🤝</div>
+          <p class="font-poppins font-semibold text-navy text-sm">NGOs</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <span class="text-cyan font-inter font-semibold text-sm uppercase tracking-widest">Our Work</span>
+        <h2 class="font-poppins font-extrabold text-4xl lg:text-5xl text-navy mt-3 mb-4">Featured Projects</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="group rounded-2xl overflow-hidden border border-slate-100 card-hover reveal">
+          <div class="h-48 bg-gradient-to-br from-royal/80 to-cyan/80 flex items-center justify-center">
+            <div class="text-white text-center">
+              <div class="text-5xl mb-2">🏦</div>
+              <p class="font-poppins font-bold text-lg">FinTech Platform</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex gap-2 mb-3">
+              <span class="tech-badge">React</span>
+              <span class="tech-badge">Node.js</span>
+              <span class="tech-badge">PostgreSQL</span>
+            </div>
+            <h3 class="font-poppins font-bold text-navy text-lg mb-2">National Credit Union Portal</h3>
+            <p class="text-slate-500 text-sm">A full-service digital banking platform serving 40,000+ customers across Uganda.</p>
+          </div>
+        </div>
+        <div class="group rounded-2xl overflow-hidden border border-slate-100 card-hover reveal delay-100">
+          <div class="h-48 bg-gradient-to-br from-emerald-600 to-emerald-400 flex items-center justify-center">
+            <div class="text-white text-center">
+              <div class="text-5xl mb-2">🏥</div>
+              <p class="font-poppins font-bold text-lg">HealthTech</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex gap-2 mb-3">
+              <span class="tech-badge">Next.js</span>
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">AWS</span>
+            </div>
+            <h3 class="font-poppins font-bold text-navy text-lg mb-2">Mubarak Hospital HMS</h3>
+            <p class="text-slate-500 text-sm">Hospital management system handling patient records, billing, and appointments.</p>
+          </div>
+        </div>
+        <div class="group rounded-2xl overflow-hidden border border-slate-100 card-hover reveal delay-200">
+          <div class="h-48 bg-gradient-to-br from-amber-600 to-orange-500 flex items-center justify-center">
+            <div class="text-white text-center">
+              <div class="text-5xl mb-2">🌾</div>
+              <p class="font-poppins font-bold text-lg">AgriTech</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex gap-2 mb-3">
+              <span class="tech-badge">Flutter</span>
+              <span class="tech-badge">Firebase</span>
+              <span class="tech-badge">IoT</span>
+            </div>
+            <h3 class="font-poppins font-bold text-navy text-lg mb-2">AgriTrack Mobile App</h3>
+            <p class="text-slate-500 text-sm">Crop monitoring and market linkage platform connecting 5,000+ smallholder farmers.</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-12">
+        <button class="btn-outline" onclick="navigateTo('portfolio')">View All Projects</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <span class="text-cyan font-inter font-semibold text-sm uppercase tracking-widest">Testimonials</span>
+        <h2 class="font-poppins font-extrabold text-4xl lg:text-5xl text-navy mt-3 mb-4">What Our Clients Say</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="testimonial-card glass-card rounded-2xl p-8 reveal">
+          <div class="flex items-center gap-1 mb-4"><span class="text-amber-400">★★★★★</span></div>
+          <p class="text-slate-600 leading-relaxed mb-6">"ScottsTechX delivered our hospital management system on time and under budget. Their team understood our workflows immediately and proposed solutions we hadn't even considered."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-royal to-cyan flex items-center justify-center text-white font-bold">DR</div>
+            <div>
+              <p class="font-poppins font-semibold text-navy">Dr. Rose Namuli</p>
+              <p class="text-slate-400 text-sm">Director, Mubarak Hospital</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card glass-card rounded-2xl p-8 reveal delay-100">
+          <div class="flex items-center gap-1 mb-4"><span class="text-amber-400">★★★★★</span></div>
+          <p class="text-slate-600 leading-relaxed mb-6">"The e-government portal they built has reduced our processing time by 70%. Constituents can now access services 24/7. An exceptional partner for critical infrastructure."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center text-white font-bold">JM</div>
+            <div>
+              <p class="font-poppins font-semibold text-navy">Hon. James Mwesi</p>
+              <p class="text-slate-400 text-sm">Permanent Secretary, Ministry of ICT</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card glass-card rounded-2xl p-8 reveal delay-200">
+          <div class="flex items-center gap-1 mb-4"><span class="text-amber-400">★★★★★</span></div>
+          <p class="text-slate-600 leading-relaxed mb-6">"We needed a custom inventory system that integrated with our existing accounting software. ScottsTechX delivered a seamless solution that's saved us hundreds of hours per month."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-600 to-emerald-400 flex items-center justify-center text-white font-bold">SN</div>
+            <div>
+              <p class="font-poppins font-semibold text-navy">Sarah Nansubuga</p>
+              <p class="text-slate-400 text-sm">COO, Metro Foods Uganda</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Preview -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <span class="text-cyan font-inter font-semibold text-sm uppercase tracking-widest">Insights</span>
+        <h2 class="font-poppins font-extrabold text-4xl lg:text-5xl text-navy mt-3 mb-4">Latest from Our Blog</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="rounded-2xl overflow-hidden border border-slate-100 card-hover reveal">
+          <div class="h-44 bg-gradient-to-br from-navy to-royal flex items-center justify-center">
+            <span class="text-5xl">🤖</span>
+          </div>
+          <div class="p-6">
+            <div class="flex gap-2 mb-3">
+              <span class="text-xs font-semibold text-cyan bg-cyan/10 px-3 py-1 rounded-full">AI</span>
+              <span class="text-xs text-slate-400">Dec 12, 2025</span>
+            </div>
+            <h3 class="font-poppins font-bold text-navy text-base mb-2">How AI is Transforming Small Business Operations in Uganda</h3>
+            <p class="text-slate-500 text-sm">Affordable AI tools are now within reach for SMEs. Here's how to get started...</p>
+          </div>
+        </div>
+        <div class="rounded-2xl overflow-hidden border border-slate-100 card-hover reveal delay-100">
+          <div class="h-44 bg-gradient-to-br from-cyan-700 to-cyan-500 flex items-center justify-center">
+            <span class="text-5xl">🔐</span>
+          </div>
+          <div class="p-6">
+            <div class="flex gap-2 mb-3">
+              <span class="text-xs font-semibold text-red-500 bg-red-50 px-3 py-1 rounded-full">Security</span>
+              <span class="text-xs text-slate-400">Nov 28, 2025</span>
+            </div>
+            <h3 class="font-poppins font-bold text-navy text-base mb-2">The Top 5 Cybersecurity Threats Facing Ugandan Businesses in 2026</h3>
+            <p class="text-slate-500 text-sm">Ransomware and phishing attacks are rising sharply. Here's how to protect your organisation...</p>
+          </div>
+        </div>
+        <div class="rounded-2xl overflow-hidden border border-slate-100 card-hover reveal delay-200">
+          <div class="h-44 bg-gradient-to-br from-emerald-700 to-emerald-500 flex items-center justify-center">
+            <span class="text-5xl">☁️</span>
+          </div>
+          <div class="p-6">
+            <div class="flex gap-2 mb-3">
+              <span class="text-xs font-semibold text-blue-500 bg-blue-50 px-3 py-1 rounded-full">Cloud</span>
+              <span class="text-xs text-slate-400">Nov 10, 2025</span>
+            </div>
+            <h3 class="font-poppins font-bold text-navy text-base mb-2">Cloud Migration Done Right: A Practical Guide for East African Enterprises</h3>
+            <p class="text-slate-500 text-sm">Moving to the cloud doesn't have to be disruptive. A phased approach that works...</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-12">
+        <button class="btn-outline" onclick="navigateTo('blog')">Read All Articles</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-gradient-to-br from-navy via-royal to-cyan relative overflow-hidden">
+    <div class="absolute inset-0 grid-pattern opacity-20"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10 reveal">
+      <h2 class="font-poppins font-extrabold text-4xl lg:text-6xl text-white mb-6">Ready to Transform Your Business?</h2>
+      <p class="text-blue-100 text-xl mb-10 max-w-2xl mx-auto">Let's discuss how ScottsTechX can help you build the technology foundation your business deserves.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <button class="bg-white text-royal font-poppins font-bold py-4 px-10 rounded-xl hover:bg-blue-50 transition-all hover:-translate-y-1 hover:shadow-2xl" onclick="navigateTo('contact')">
+          Get a Free Consultation
+        </button>
+        <button class="border-2 border-white/30 text-white font-poppins font-semibold py-4 px-10 rounded-xl hover:bg-white/10 transition-all hover:-translate-y-1" onclick="navigateTo('portfolio')">
+          View Our Work
+        </button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE: ABOUT
+══════════════════════════════════════ -->
+<div id="page-about" class="page">
+  <section class="pt-40 pb-24 bg-gradient-to-b from-navy to-slate-900 text-white relative overflow-hidden">
+    <canvas id="about-bg-canvas" class="absolute inset-0 w-full h-full -z-10"></canvas>
+    <div class="absolute inset-0 grid-pattern opacity-20"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center">
+      <span class="text-cyan font-inter font-semibold text-sm uppercase tracking-widest">About Us</span>
+      <h1 class="font-poppins font-extrabold text-5xl lg:text-7xl mt-4 mb-6">Our Story</h1>
+      <p class="text-slate-300 text-xl max-w-3xl mx-auto">We started ScottsTechX with one belief: Ugandan businesses deserve access to world-class technology — not just the big corporations.</p>
+    </div>
+  </section>
+
+  <!-- Mission, Vision, Values -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8 mb-24">
+        <div class="rounded-2xl bg-gradient-to-br from-royal to-cyan p-8 text-white reveal">
+          <div class="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center mb-6">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3 class="font-poppins font-bold text-2xl mb-3">Our Mission</h3>
+          <p class="text-blue-100 leading-relaxed">To empower Ugandan businesses and institutions with innovative, secure, and scalable technology solutions that drive growth and create lasting competitive advantage.</p>
+        </div>
+        <div class="rounded-2xl bg-navy p-8 text-white reveal delay-100">
+          <div class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-6">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3 class="font-poppins font-bold text-2xl mb-3">Our Vision</h3>
+          <p class="text-slate-300 leading-relaxed">To be East Africa's most trusted technology partner — recognised for technical excellence, integrity, and the measurable impact of our solutions on client success.</p>
+        </div>
+        <div class="rounded-2xl bg-slate-50 border border-slate-100 p-8 reveal delay-200">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-royal/10 to-cyan/10 flex items-center justify-center mb-6">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0056D2" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="font-poppins font-bold text-2xl text-navy mb-3">Our Values</h3>
+          <ul class="space-y-2 text-slate-600 text-sm">
+            <li class="flex items-center gap-2"><span class="text-cyan font-bold">✓</span> Integrity above all</li>
+            <li class="flex items-center gap-2"><span class="text-cyan font-bold">✓</span> Client success is our success</li>
+            <li class="flex items-center gap-2"><span class="text-cyan font-bold">✓</span> Continuous learning</li>
+            <li class="flex items-center gap-2"><span class="text-cyan font-bold">✓</span> Security-first mindset</li>
+            <li class="flex items-center gap-2"><span class="text-cyan font-bold">✓</span> Transparent communication</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Story -->
+      <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+        <div class="reveal">
+          <span class="text-cyan font-inter font-semibold text-sm uppercase tracking-widest">Who We Are</span>
+          <h2 class="font-poppins font-extrabold text-4xl text-navy mt-3 mb-6">A Team of Engineers Who Care</h2>
+          <p class="text-slate-500 leading-relaxed mb-4">Founded in Kampala, ScottsTechX Enterprise (U) Ltd was built on the frustration of watching Ugandan businesses pay inflated prices for mediocre technology services from foreign firms with no local understanding.</p>
+          <p class="text-slate-500 leading-relaxed mb-4">We set out to build something different — a homegrown technology company with the skills of a global consultancy and the accountability of a local partner.</p>
+          <p class="text-slate-500 leading-relaxed">Today, our team of senior engineers, designers, and project managers serves clients across government, healthcare, finance, education, and agriculture — delivering solutions that compete with anything built elsewhere.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-4 reveal delay-200">
+          <div class="rounded-2xl bg-gradient-to-br from-royal to-cyan p-6 text-white text-center">
+            <div class="text-4xl font-poppins font-extrabold mb-2">2022</div>
+            <p class="text-sm text-blue-100">Founded</p>
+          </div>
+          <div class="rounded-2xl bg-navy p-6 text-white text-center">
+            <div class="text-4xl font-poppins font-extrabold mb-2">15+</div>
+            <p class="text-sm text-slate-300">Team Members</p>
+          </div>
+          <div class="rounded-2xl bg-slate-50 p-6 text-center border border-slate-100">
+            <div class="text-4xl font-poppins font-extrabold text-royal mb-2">50+</div>
+            <p class="text-sm text-slate-500">Projects</p>
+          </div>
+          <div class="rounded-2xl bg-slate-50 p-6 text-center border border-slate-100">
+            <div class="text-4xl font-poppins font-extrabold text-cyan mb-2">30+</div>
+            <p class="text-sm text-slate-500">Clients</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="reveal">
+        <h2 class="font-poppins font-extrabold text-4xl text-navy text-center mb-16">Our Journey</h2>
+        <div class="relative">
+          <div class="absolute left-1/2 -translate-x-1/2 h-full w-px bg-gradient-to-b from-royal via-cyan to-emerald"></div>
+          <div class="space-y-16">
+            <div class="flex items-center gap-8">
+              <div class="flex-1 text-right">
+                <h4 class="font-poppins font-bold text-navy text-lg">2022 — The Beginning</h4>
+                <p class="text-slate-500 text-sm mt-1">Founded in Kampala with a team of 3 engineers. First project: a clinic management system for a rural health centre.</p>
+              </div>
+              <div class="w-4 h-4 rounded-full bg-royal border-4 border-white shadow flex-shrink-0 z-10"></div>
+              <div class="flex-1"></div>
+            </div>
+            <div class="flex items-center gap-8">
+              <div class="flex-1"></div>
+              <div class="w-4 h-4 rounded-full bg-cyan border-4 border-white shadow flex-shrink-0 z-10"></div>
+              <div class="flex-1 text-left">
+                <h4 class="font-poppins font-bold text-navy text-lg">2023 — Scaling Up</h4>
+                <p class="text-slate-500 text-sm mt-1">Team grew to 8. Secured first government contract with the Ministry of ICT for a digital services portal.</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-8">
+              <div class="flex-1 text-right">
+                <h4 class="font-poppins font-bold text-navy text-lg">2024 — Diversification</h4>
+                <p class="text-slate-500 text-sm mt-1">Launched cybersecurity practice. Expanded into cloud infrastructure and data analytics services.</p>
+              </div>
+              <div class="w-4 h-4 rounded-full bg-emerald-500 border-4 border-white shadow flex-shrink-0 z-10"></div>
+              <div class="flex-1"></div>
+            </div>
+            <div class="flex items-center gap-8">
+              <div class="flex-1"></div>
+              <div class="w-4 h-4 rounded-full bg-amber-500 border-4 border-white shadow flex-shrink-0 z-10"></div>
+              <div class="flex-1 text-left">
+                <h4 class="font-poppins font-bold text-navy text-lg">2025 — Regional Expansion</h4>
+                <p class="text-slate-500 text-sm mt-1">Serving clients across Uganda, Kenya, and Tanzania. Launched our SaaS product line targeting East African SMEs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <span class="text-cyan font-inter font-semibold text-sm uppercase tracking-widest">Leadership</span>
+        <h2 class="font-poppins font-extrabold text-4xl lg:text-5xl text-navy mt-3">Meet Our Team</h2>
+      </div>
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="glass-card rounded-2xl p-8 text-center card-hover reveal">
+          <div class="w-24 h-24 rounded-full bg-gradient-to-br from-royal to-cyan mx-auto mb-4 flex items-center justify-center text-white text-3xl font-poppins font-bold">FJ</div>
+          <h4 class="font-poppins font-bold text-navy text-lg">Fred J. Scotts</h4>
+          <p class="text-royal text-sm font-medium mb-2">Founder & CEO</p>
+          <p class="text-slate-400 text-xs mb-4">15+ years in enterprise software. Former Lead Engineer at [Major Tech Co].</p>
+          <a href="https://linkedin.com/in/fredscotts" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-royal hover:text-cyan transition-colors font-medium">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+        <div class="glass-card rounded-2xl p-8 text-center card-hover reveal delay-100">
+          <div class="w-24 h-24 rounded-full bg-gradient-to-br from-purple-500 to-purple-700 mx-auto mb-4 flex items-center justify-center text-white text-3xl font-poppins font-bold">AK</div>
+          <h4 class="font-poppins font-bold text-navy text-lg">Amina Kibira</h4>
+          <p class="text-royal text-sm font-medium mb-2">CTO</p>
+          <p class="text-slate-400 text-xs mb-4">MSc Computer Science. Expert in cloud architecture and AI/ML systems.</p>
+          <a href="https://linkedin.com/in/aminakibira" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-royal hover:text-cyan transition-colors font-medium">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+        <div class="glass-card rounded-2xl p-8 text-center card-hover reveal delay-200">
+          <div class="w-24 h-24 rounded-full bg-gradient-to-br from-emerald-600 to-emerald-400 mx-auto mb-4 flex items-center justify-center text-white text-3xl font-poppins font-bold">RM</div>
+          <h4 class="font-poppins font-bold text-navy text-lg">Robert Musoke</h4>
+          <p class="text-royal text-sm font-medium mb-2">Head of Engineering</p>
+          <p class="text-slate-400 text-xs mb-4">Full-stack architect. Specialist in React, Python, and distributed systems.</p>
+          <a href="https://linkedin.com/in/robertmusoke" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-royal hover:text-cyan transition-colors font-medium">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+        <div class="glass-card rounded-2xl p-8 text-center card-hover reveal delay-300">
+          <div class="w-24 h-24 rounded-full bg-gradient-to-br from-amber-600 to-orange-500 mx-auto mb-4 flex items-center justify-center text-white text-3xl font-poppins font-bold">SN</div>
+          <h4 class="font-poppins font-bold text-navy text-lg">Sarah Nabisere</h4>
+          <p class="text-royal text-sm font-medium mb-2">Head of Design</p>
+          <p class="text-slate-400 text-xs mb-4">UX/UI specialist. Delivers products that users love and businesses trust.</p>
+          <a href="https://linkedin.com/in/sarahnabisere" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-royal hover:text-cyan transition-colors font-medium">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE: SERVICES
+══════════════════════════════════════ -->
+<div id="page-services" class="page">
+  <section class="pt-40 pb-24 bg-gradient-to-br from-navy to-slate-900 text-white relative overflow-hidden">
+    <canvas id="services-bg-canvas" class="absolute inset-0 w-full h-full -z-10"></canvas>
+    <div class="absolute inset-0 grid-pattern opacity-20"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center">
+      <span class="text-cyan font-inter font-semibold text-sm uppercase tracking-widest">What We Do</span>
+      <h1 class="font-poppins font-extrabold text-5xl lg:text-7xl mt-4 mb-6">Our Services</h1>
+      <p class="text-slate-300 text-xl max-w-2xl mx-auto">End-to-end technology solutions — from strategy and design to development, deployment, and ongoing support.</p>
+    </div>
+  </section>
+
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="space-y-24">
+        <!-- Service 1: Software Development -->
+        <div class="grid lg:grid-cols-2 gap-16 items-center reveal">
+          <div>
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-royal to-cyan flex items-center justify-center mb-6">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M8 6H21M8 12H21M8 18H21M3 6H3a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H3"/></svg>
+            </div>
+            <h2 class="font-poppins font-extrabold text-4xl text-navy mb-4">Software Development</h2>
+            <p class="text-slate-500 leading-relaxed mb-6">Custom software built from the ground up for your exact needs. We write clean, maintainable code that scales with your business — not off-the-shelf solutions that force you to adapt.</p>
+            <div class="space-y-3 mb-8">
+              <div class="flex items-start gap-3">
+                <span class="text-cyan font-bold mt-1">✓</span>
+                <div><strong class="text-navy">Web Applications</strong> — React, Next.js, Vue.js front-ends with robust Python or Node.js back-ends.</div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-cyan font-bold mt-1">✓</span>
+                <div><strong class="text-navy">Enterprise Systems</strong> — ERP, CRM, and workflow automation tailored to your processes.</div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="text-cyan font-bold mt-1">✓</span>
+                <div><strong class="text-navy">REST & GraphQL APIs</strong> — Documented, versioned APIs built for third-party integrations.</div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-8">
+              <span class="tech-badge">React</span><span class="tech-badge">Next.js</span><span class="tech-badge">Python</span><span class="tech-badge">Node.js</span><span class="tech-badge">PostgreSQL</span><span class="tech-badge">GraphQL</span>
+            </div>
+            <button class="btn-primary" onclick="navigateTo('contact')">Request a Quote</button>
+          </div>
+          <div class="rounded-2xl bg-gradient-to-br from-slate-50 to-blue-50 p-12 border border-slate-100 flex items-center justify-center min-h-72">
+            <div class="text-center">
+              <div class="text-7xl mb-4">💻</div>
+              <p class="font-poppins font-bold text-navy text-lg">Custom-Built Software</p>
+              <p class="text-slate-400 text-sm">From idea to production</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 2: Website Development -->
+        <div class="grid lg:grid-cols-2 gap-16 items-center reveal">
+          <div class="order-2 lg:order-1 rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 p-12 border border-slate-100 flex items-center justify-center min-h-72">
+            <div class="text-center">
+              <div class="text-7xl mb-4">🌐</div>
+              <p class="font-poppins font-bold text-navy text-lg">Modern Websites</p>
+              <p class="text-slate-400 text-sm">Fast, responsive, beautiful</p>
+            </div>
+          </div>
+          <div class="order-1 lg:order-2">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center mb-6">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h2 class="font-poppins font-extrabold text-4xl text-navy mb-4">Website Development</h2>
+            <p class="text-slate-500 leading-relaxed mb-6">Websites that load fast, rank well on Google, and convert visitors into customers. Every site we build is optimized for Uganda's internet conditions and mobile-first users.</p>
+            <div class="space-y-3 mb-8">
+              <div class="flex items-start gap-3"><span class="text-cyan font-bold mt-1">✓</span><div><strong class="text-navy">Corporate Websites</strong> — Professional online presence that builds trust.</div></div>
+              <div class="flex items-start gap-3"><span class="text-cyan font-bold mt-1">✓</span><div><strong class="text-navy">E-commerce</strong> — Online stores with payment integration and inventory management.</div></div>
+              <div class="flex items-start gap-3"><span class="text-cyan font-bold mt-1">✓</span><div><strong class="text-navy">Landing Pages</strong> — High-converting pages for campaigns and product launches.</div></div>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-8">
+              <span class="tech-badge">Next.js</span><span class="tech-badge">Tailwind</span><span class="tech-badge">WordPress</span><span class="tech-badge">Shopify</span><span class="tech-badge">Stripe</span>
+            </div>
+            <button class="btn-primary" onclick="navigateTo('contact')">Request a Quote</button>
+          </div>
+        </div>
+
+        <!-- Service 3: Mobile App Development -->
+        <div class="grid lg:grid-cols-2 gap-16 items-center reveal">
+          <div>
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-rose-500 to-rose-700 flex items-center justify-center mb-6">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+            </div>
+            <h2 class="font-poppins font-extrabold text-4xl text-navy mb-4">Mobile App Development</h2>
+            <p class="text-slate-500 leading-relaxed mb-6">Native Android and cross-platform apps that perform flawlessly on Ugandan devices and networks. From Play Store submission to post-launch analytics — we handle it all.</p>
+            <div class="space-y-3 mb-8">
+              <div class="flex items-start gap-3"><span class="text-cyan font-bold mt-1">✓</span><div><strong class="text-navy">Android Native</strong> — Kotlin/Java apps optimised for performance on mid-range devices.</div></div>
+              <div class="flex items-start gap-3"><span class="text-cyan font-bold mt-1">✓</span><div><strong class="text-navy">Cross-Platform</strong> — Flutter apps that run on both Android and iOS from a single codebase.</div></div>
+              <div class="flex items-start gap-3"><span class="text-cyan font-bold mt-1">✓</span><div><strong class="text-navy">PWA & Web Apps</strong> — Mobile-first web apps for instant access without installation.</div></div>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-8">
+              <span class="tech-badge">Kotlin</span><span class="tech-badge">Java</span><span class="tech-badge">Flutter</span><span class="tech-badge">React Native</span><span class="tech-badge">Firebase</span>
+            </div>
+            <button class="btn-primary" onclick="navigateTo('contact')">Request a Quote</button>
+          </div>
+          <div class="rounded-2xl bg-gradient-to-br from-rose-50 to-orange-50 p-12 border border-slate-100 flex items-center justify-center min-h-72">
+            <div class="text-center">
+              <div class="text-7xl mb-4">📱</div>
+              <p class="font-poppins font-bold text-navy text-lg">Mobile-First Apps</p>
+              <p class="text-slate-400 text-sm">Android & cross-platform</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 4: Cloud Solutions -->
+        <div class="grid lg:grid-cols-2 gap-16 items-center reveal">
+          <div class="order-2 lg:order-1 rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50 p-12 border border-slate-100 flex items-center justify-center min-h-72">
+            <div class="text-center">
+              <div class="text-7xl mb-4">☁️</div>
+              <p class="font-poppins font-bold text-navy text-lg">Cloud Infrastructure</p>
+              <p class="text-slate-400 text-sm">AWS, Azure, GCP</p>
+            </div>
+          </div>
+          <div class="order-1 lg:order-2">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center mb-6">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+            </div>
+            <h2 class="font-poppins font-extrabold text-4xl text-navy mb-4">Cloud Solutions</h2>
+            <p class="text-slate-500 leading-relaxed mb-6">Migrate, optimise, and manage your cloud infrastructure with confidence. We design architectures that are resilient, cost-effective, and built for the African context.</p>
+            <div class="space-y-3 mb-8">
+              <div class="flex items-start gap-3"><span class="text-cyan font-bold mt-1">✓</span><div><strong class="text-navy">Cloud Migration</strong> — Move from on-premise to AWS, Azure, or Google Cloud with zero downtime.</div></div>
+              <div class="flex items-start gap-3"><span class="text-cyan font-bold mt-1">✓</span><div><strong class="text-navy">Infrastructure as Code</strong> — Terraform and Pulumi for reproducible, version-controlled infrastructure.</div></div>
+              <div class="flex items-start gap-3"><span class="text-cyan font-bold mt-1">✓</span><div><strong class="text-navy">DevOps & CI/CD</strong> — Automated pipelines that get your code to production faster and more safely.</div></div>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-8">
+              <span class="tech-badge">AWS</span><span class="tech-badge">Azure</span><span class="tech-badge">GCP</span><span class="tech-badge">Terraform</span><span class="tech-badge">Docker</span><span class="tech-badge">Kubernetes</span>
+            </div>
+            <button class="btn-primary" onclick="navigateTo('contact')">Request a Quote</button>
+          </div>
+        </div>
+
+        <!-- Service 5: Cybersecurity -->
+        <div class="grid lg:grid-cols-2 gap-16 items-center reveal">
+          <div>
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center mb-6">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h2 class="font-poppins font-extrabold text-4xl text-navy mb-4">Cybersecurity</h2>
+            <p class="text-slate-500 leading-relaxed mb-6">Cyber threats don't wait. We help you identify vulnerabilities before attackers do, respond to incidents when they happen, and build a security culture that lasts.</p>
+            <div class="space-y-3 mb-8">
+              <div class="flex items-start gap-3"><span class="text-cyan font-bold mt-1">✓</span><div><strong class="text-navy">Penetration Testing</strong> — Ethical hacking to expose weaknesses in your systems and applications.</div></div>
+              <div class="flex items-start gap-3"><span class="text-cyan font-bold mt-1">✓</span><div><strong class="text-navy">Security Audits</strong> — Comprehensive assessment against international standards (ISO 27001, NIST).</div></div>
+              <div class="flex items-start gap-3"><span class="text-cyan font-bold mt-1">✓</span><div><strong class="text-navy">Incident Response</strong> — 24/7 rapid response team for when things go wrong.</div></div>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-8">
+              <span class="tech-badge">PenTest</span><span class="tech-badge">OWASP</span><span class="tech-badge">ISO 27001</span><span class="tech-badge">NIST</span><span class="tech-badge">SIEM</span>
+            </div>
+            <button class="btn-primary" onclick="navigateTo('contact')">Request a Quote</button>
+          </div>
+          <div class="rounded-2xl bg-gradient-to-br from-red-50 to-orange-50 p-12 border border-slate-100 flex items-center justify-center min-h-72">
+            <div class="text-center">
+              <div class="text-7xl mb-4">🔐</div>
+              <p class="font-poppins font-bold text-navy text-lg">Security-First</p>
+              <p class="text-slate-400 text-sm">Protect what matters</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="mt-24 reveal">
+        <h2 class="font-poppins font-extrabold text-4xl text-navy text-center mb-12">Frequently Asked Questions</h2>
+        <div class="max-w-3xl mx-auto space-y-4">
+          <div class="border border-slate-200 rounded-xl overflow-hidden">
+            <button class="w-full text-left p-6 font-poppins font-semibold text-navy flex justify-between items-center" onclick="toggleAccordion(this)">
+              How long does a typical project take?
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="accordion-icon transition-transform"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="accordion-content px-6 pb-6"><p class="text-slate-500 text-sm leading-relaxed">It depends on scope. A simple website takes 4–8 weeks. A custom software project typically runs 3–6 months. We provide detailed timelines during the discovery phase.</p></div>
+          </div>
+          <div class="border border-slate-200 rounded-xl overflow-hidden">
+            <button class="w-full text-left p-6 font-poppins font-semibold text-navy flex justify-between items-center" onclick="toggleAccordion(this)">
+              Do you offer post-launch support?
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="accordion-icon transition-transform"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="accordion-content px-6 pb-6"><p class="text-slate-500 text-sm leading-relaxed">Yes. All our projects come with a minimum 3-month warranty period. After that, we offer flexible SLA-based support contracts tailored to your needs.</p></div>
+          </div>
+          <div class="border border-slate-200 rounded-xl overflow-hidden">
+            <button class="w-full text-left p-6 font-poppins font-semibold text-navy flex justify-between items-center" onclick="toggleAccordion(this)">
+              What technologies do you specialise in?
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="accordion-icon transition-transform"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="accordion-content px-6 pb-6"><p class="text-slate-500 text-sm leading-relaxed">Our core stack includes React/Next.js, Python/Django/FastAPI, Node.js, PostgreSQL, AWS, and Docker. But we choose the right tool for each project — not every solution needs the same technology.</p></div>
+          </div>
+          <div class="border border-slate-200 rounded-xl overflow-hidden">
+            <button class="w-full text-left p-6 font-poppins font-semibold text-navy flex justify-between items-center" onclick="toggleAccordion(this)">
+              Can you work with our existing IT team?
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="accordion-icon transition-transform"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="accordion-content px-6 pb-6"><p class="text-slate-500 text-sm leading-relaxed">Absolutely. We frequently augment existing teams as specialist contractors. We can integrate with your workflow, use your preferred tools, and transfer knowledge throughout the engagement.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE: SENTINEL AI
+══════════════════════════════════════ -->
+<div id="page-sentinel" class="page">
+  <section class="pt-36 pb-20 bg-navy text-white relative overflow-hidden">
+    <div class="absolute inset-0 grid-pattern opacity-20"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-5 gap-12 items-end">
+        <div class="lg:col-span-3">
+          <div class="inline-flex items-center gap-2 border border-cyan/30 bg-cyan/10 rounded-full px-4 py-2 mb-7">
+            <span class="w-2 h-2 rounded-full bg-cyan"></span>
+            <span class="text-xs font-semibold tracking-widest uppercase text-cyan">Target architecture · governed delivery</span>
+          </div>
+          <h1 class="font-poppins font-extrabold text-5xl lg:text-7xl leading-tight mb-6">Sentinel AI<br><span class="text-cyan">Security Ecosystem</span></h1>
+          <p class="text-slate-300 text-xl leading-relaxed max-w-3xl">A reference architecture for phased delivery of authorized offensive assurance, defensive operations, AI-assisted response, and executive oversight.</p>
+        </div>
+        <aside class="lg:col-span-2 border border-white/15 rounded-2xl p-6 bg-white/5" aria-label="Delivery status">
+          <p class="text-xs text-cyan font-semibold uppercase tracking-widest mb-3">Important status</p>
+          <p class="text-slate-200 leading-relaxed">This page describes a Reference architecture for phased delivery. It does not represent a currently deployed SOC platform or autonomous production capability.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-slate-950 text-white" aria-labelledby="sentinel-architecture-title">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-10">
+        <div class="lg:col-span-4">
+          <span class="text-cyan text-sm font-semibold uppercase tracking-widest">Operating model</span>
+          <h2 id="sentinel-architecture-title" class="font-poppins font-extrabold text-4xl mt-3 mb-5">One governed control plane</h2>
+          <p class="text-slate-400 leading-relaxed mb-8">Zero Trust identity, immutable evidence, policy enforcement, and Human approval bind every security workflow together.</p>
+          <div class="space-y-4 text-sm">
+            <div class="border-t border-white/10 pt-4"><strong class="text-white block mb-1">Never trust, always verify</strong><span class="text-slate-400">Strong identity, device posture, least privilege, and continuous authorization.</span></div>
+            <div class="border-t border-white/10 pt-4"><strong class="text-white block mb-1">Safe autonomy</strong><span class="text-slate-400">Bounded playbooks, policy checks, dry runs, and reversible actions before execution.</span></div>
+            <div class="border-t border-white/10 pt-4"><strong class="text-white block mb-1">Evidence by default</strong><span class="text-slate-400">Signed audit events and chain-of-custody records for operational and compliance review.</span></div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-8 rounded-2xl border border-white/10 bg-slate-900 p-6 lg:p-8 overflow-x-auto" aria-label="Sentinel AI architecture diagram">
+          <svg viewBox="0 0 820 560" role="img" aria-labelledby="sentinel-svg-title sentinel-svg-desc" class="w-full min-w-[680px]">
+            <title id="sentinel-svg-title">Sentinel AI target architecture</title>
+            <desc id="sentinel-svg-desc">Operators access a command center through a zero trust gateway. A policy-governed orchestration layer coordinates defensive, offensive assurance, compliance, and response services over a secure event bus and evidence stores.</desc>
+            <defs><marker id="sentinel-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#38bdf8"/></marker></defs>
+            <g fill="none" stroke="#38bdf8" stroke-width="2" marker-end="url(#sentinel-arrow)" opacity=".75">
+              <path d="M410 82V125"/><path d="M410 215V255"/><path d="M410 335V375"/>
+              <path d="M410 335C410 355 145 350 145 375"/><path d="M410 335C410 355 675 350 675 375"/>
+              <path d="M145 455V490"/><path d="M410 455V490"/><path d="M675 455V490"/>
+            </g>
+            <g font-family="Inter,Arial,sans-serif">
+              <rect x="275" y="20" width="270" height="62" rx="10" fill="#082f49" stroke="#22d3ee"/>
+              <text x="410" y="47" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">Command Center</text><text x="410" y="67" text-anchor="middle" fill="#94a3b8" font-size="11">CISO · SOC · Pentest · Audit views</text>
+              <rect x="250" y="125" width="320" height="90" rx="10" fill="#3f1230" stroke="#fb7185"/>
+              <text x="410" y="154" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">Zero Trust Policy Gateway</text><text x="410" y="178" text-anchor="middle" fill="#fda4af" font-size="11">OIDC · FIDO2 · RBAC/ABAC · JIT · device posture</text><text x="410" y="197" text-anchor="middle" fill="#94a3b8" font-size="11">Signed authorization · approval gates · full audit</text>
+              <rect x="190" y="255" width="440" height="80" rx="10" fill="#064e3b" stroke="#34d399"/>
+              <text x="410" y="285" text-anchor="middle" fill="#fff" font-size="17" font-weight="700">Sentinel AI Orchestration</text><text x="410" y="309" text-anchor="middle" fill="#6ee7b7" font-size="11">Detect · enrich · recommend · simulate · explain · coordinate</text><text x="410" y="326" text-anchor="middle" fill="#94a3b8" font-size="10">No disruptive action outside approved policy</text>
+              <rect x="35" y="375" width="220" height="80" rx="10" fill="#083344" stroke="#22d3ee"/><text x="145" y="405" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">Defensive Operations</text><text x="145" y="428" text-anchor="middle" fill="#67e8f9" font-size="11">SIEM · EDR/XDR · NTA · CSPM</text><text x="145" y="445" text-anchor="middle" fill="#94a3b8" font-size="10">Monitor and contain</text>
+              <rect x="300" y="375" width="220" height="80" rx="10" fill="#4c1d95" stroke="#a78bfa"/><text x="410" y="405" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">Authorized Assurance</text><text x="410" y="428" text-anchor="middle" fill="#c4b5fd" font-size="11">RoE · recon · validation · reporting</text><text x="410" y="445" text-anchor="middle" fill="#94a3b8" font-size="10">Safe, scoped, time-bound</text>
+              <rect x="565" y="375" width="220" height="80" rx="10" fill="#78350f" stroke="#fbbf24"/><text x="675" y="405" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">Risk &amp; Compliance</text><text x="675" y="428" text-anchor="middle" fill="#fde68a" font-size="11">NIST · ISO 27001 · MITRE · OWASP</text><text x="675" y="445" text-anchor="middle" fill="#94a3b8" font-size="10">Evidence and control mapping</text>
+              <rect x="35" y="490" width="220" height="55" rx="10" fill="#431407" stroke="#fb923c"/><text x="145" y="516" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">Secure Event Bus</text><text x="145" y="534" text-anchor="middle" fill="#fdba74" font-size="10">Kafka / Pulsar · mTLS</text>
+              <rect x="300" y="490" width="220" height="55" rx="10" fill="#2e1065" stroke="#a78bfa"/><text x="410" y="516" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">Hot Analytics</text><text x="410" y="534" text-anchor="middle" fill="#c4b5fd" font-size="10">ClickHouse / OpenSearch</text>
+              <rect x="565" y="490" width="220" height="55" rx="10" fill="#3f1230" stroke="#fb7185"/><text x="675" y="516" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">Immutable Evidence</text><text x="675" y="534" text-anchor="middle" fill="#fda4af" font-size="10">WORM object storage · KMS</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white" aria-labelledby="sentinel-capabilities-title">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl mb-14"><span class="text-cyan text-sm font-semibold uppercase tracking-widest">Capability domains</span><h2 id="sentinel-capabilities-title" class="font-poppins font-extrabold text-4xl text-navy mt-3 mb-5">Designed for control, not unchecked autonomy</h2><p class="text-slate-500 text-lg">Each domain is independently deployable. Integration proceeds only after identity, telemetry quality, rollback, and audit controls pass acceptance testing.</p></div>
+      <div class="grid lg:grid-cols-2 gap-x-14 gap-y-10">
+        <article class="border-t-2 border-red-600 pt-6"><p class="text-xs text-red-600 font-bold uppercase tracking-widest mb-2">01 · Authorized assurance</p><h3 class="font-poppins font-bold text-2xl text-navy mb-3">Offensive validation with hard boundaries</h3><p class="text-slate-500 leading-relaxed mb-4">A signed Rules of Engagement engine constrains every action by target, technique, operator, environment, and time window. Out-of-scope work is blocked and recorded.</p><ul class="text-sm text-slate-600 space-y-2"><li>• Passive-first discovery and CMDB reconciliation</li><li>• Safe vulnerability validation without disruptive payloads</li><li>• MITRE ATT&amp;CK-aligned simulations with kill switches</li><li>• Signed findings, evidence, and remediation workflow</li></ul></article>
+        <article class="border-t-2 border-cyan pt-6"><p class="text-xs text-cyan font-bold uppercase tracking-widest mb-2">02 · Defensive operations</p><h3 class="font-poppins font-bold text-2xl text-navy mb-3">Unified detection and response</h3><p class="text-slate-500 leading-relaxed mb-4">Normalize network, endpoint, identity, cloud, application, and data telemetry into evidence-backed detections with transparent confidence and provenance.</p><ul class="text-sm text-slate-600 space-y-2"><li>• SIEM, EDR/XDR, NTA, IAM, DLP, CSPM integration</li><li>• Detection-as-code with peer review and rollback</li><li>• Threat hunting and entity behavior baselines</li><li>• Case management with chain-of-custody</li></ul></article>
+        <article class="border-t-2 border-emerald-600 pt-6"><p class="text-xs text-emerald-600 font-bold uppercase tracking-widest mb-2">03 · AI coordination</p><h3 class="font-poppins font-bold text-2xl text-navy mb-3">Explainable assistance before automation</h3><p class="text-slate-500 leading-relaxed mb-4">Specialized agents enrich events, retrieve approved runbooks, simulate response options, and provide evidence citations. Human approval remains mandatory for disruptive actions.</p><ul class="text-sm text-slate-600 space-y-2"><li>• Recon, Monitor, Response, and Compliance agents</li><li>• Policy-bound tools with minimum necessary privilege</li><li>• Evaluation gates for drift, hallucination, and bias</li><li>• Full prompt, context, tool, and decision auditing</li></ul></article>
+        <article class="border-t-2 border-amber-500 pt-6"><p class="text-xs text-amber-600 font-bold uppercase tracking-widest mb-2">04 · Governance</p><h3 class="font-poppins font-bold text-2xl text-navy mb-3">Measurable risk and compliance evidence</h3><p class="text-slate-500 leading-relaxed mb-4">Map assets, controls, risks, findings, incidents, and evidence to NIST CSF, ISO 27001, OWASP ASVS, MITRE ATT&amp;CK, and applicable regulatory obligations.</p><ul class="text-sm text-slate-600 space-y-2"><li>• Versioned policies and control ownership</li><li>• Continuous evidence collection and attestation</li><li>• Executive risk trends without invented certainty</li><li>• Audit-ready export with access logging</li></ul></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-slate-50" aria-labelledby="sentinel-guardrails-title">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-3 gap-8">
+      <div><span class="text-red-600 text-sm font-semibold uppercase tracking-widest">Non-negotiable guardrails</span><h2 id="sentinel-guardrails-title" class="font-poppins font-extrabold text-4xl text-navy mt-3 mb-5">Authority before capability</h2><p class="text-slate-500 leading-relaxed">Security tooling is powerful. Sentinel AI is designed to fail closed when authorization, scope, identity, or evidence controls are missing.</p></div>
+      <div class="lg:col-span-2 grid md:grid-cols-2 gap-6">
+        <div class="bg-white border border-slate-200 rounded-xl p-6"><h3 class="font-poppins font-bold text-navy mb-2">Signed Rules of Engagement</h3><p class="text-sm text-slate-500">Cryptographically signed, time-bound, target-bound authorization is verified at dispatch and execution.</p></div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6"><h3 class="font-poppins font-bold text-navy mb-2">Human approval gates</h3><p class="text-sm text-slate-500">Account disablement, isolation, traffic blocking, data changes, and active testing require accountable approval unless a specific reversible playbook is pre-authorized.</p></div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6"><h3 class="font-poppins font-bold text-navy mb-2">Blast-radius controls</h3><p class="text-sm text-slate-500">Concurrency limits, canaries, maintenance windows, kill switches, rollback, and asset criticality checks constrain execution.</p></div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6"><h3 class="font-poppins font-bold text-navy mb-2">Tamper-evident evidence</h3><p class="text-sm text-slate-500">Commands, approvals, model versions, retrieved sources, outputs, and results are signed and retained under policy.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white" aria-labelledby="sentinel-roadmap-title">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12"><div class="max-w-3xl"><span class="text-cyan text-sm font-semibold uppercase tracking-widest">Delivery roadmap</span><h2 id="sentinel-roadmap-title" class="font-poppins font-extrabold text-4xl text-navy mt-3">Prove the controls before scaling the autonomy</h2></div><a href="docs/SENTINEL-AI-SYSTEM-DESIGN.md" class="btn-outline inline-flex items-center justify-center">Read technical blueprint</a></div>
+      <ol class="border-l-2 border-slate-200 ml-3 space-y-10">
+        <li class="relative pl-8"><span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-royal border-4 border-white"></span><p class="text-xs text-royal font-bold uppercase tracking-widest">Phase 1 · Foundation</p><h3 class="font-poppins font-bold text-xl text-navy mt-1">Identity, asset graph, event contracts, audit, command center shell</h3><p class="text-slate-500 mt-2">Exit only after threat modeling, access reviews, restore tests, and telemetry quality gates pass.</p></li>
+        <li class="relative pl-8"><span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-cyan border-4 border-white"></span><p class="text-xs text-cyan font-bold uppercase tracking-widest">Phase 2 · Defense</p><h3 class="font-poppins font-bold text-xl text-navy mt-1">SIEM ingestion, detection-as-code, cases, cloud and identity posture</h3><p class="text-slate-500 mt-2">Measure coverage, latency, precision, analyst workload, and recovery—not marketing guarantees.</p></li>
+        <li class="relative pl-8"><span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-red-600 border-4 border-white"></span><p class="text-xs text-red-600 font-bold uppercase tracking-widest">Phase 3 · Assurance</p><h3 class="font-poppins font-bold text-xl text-navy mt-1">Rules of Engagement, safe validation, attack-path analysis, remediation</h3><p class="text-slate-500 mt-2">Begin in a lab, then approved non-production targets, then bounded production validation.</p></li>
+        <li class="relative pl-8"><span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-emerald-600 border-4 border-white"></span><p class="text-xs text-emerald-600 font-bold uppercase tracking-widest">Phase 4 · Assisted response</p><h3 class="font-poppins font-bold text-xl text-navy mt-1">RAG, investigation copilots, simulations, pre-approved reversible playbooks</h3><p class="text-slate-500 mt-2">Production promotion requires model evaluation, red teaming, drift monitoring, and manual fallback.</p></li>
+        <li class="relative pl-8"><span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-amber-500 border-4 border-white"></span><p class="text-xs text-amber-600 font-bold uppercase tracking-widest">Phase 5 · Resilience</p><h3 class="font-poppins font-bold text-xl text-navy mt-1">Multi-region recovery, chaos tests, evidence automation, continuous purple teaming</h3><p class="text-slate-500 mt-2">Scale against measured workloads and agreed SLOs; revisit the threat model every quarter.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="py-20 bg-navy text-white"><div class="max-w-5xl mx-auto px-6 lg:px-8 flex flex-col lg:flex-row gap-8 items-center justify-between"><div><p class="text-cyan text-sm font-semibold uppercase tracking-widest mb-2">Start with discovery</p><h2 class="font-poppins font-extrabold text-3xl">Define your threat model, authority, and measurable outcomes.</h2></div><button class="bg-white text-navy font-poppins font-bold py-4 px-8 rounded-xl whitespace-nowrap" onclick="navigateTo('contact')">Request a security workshop</button></div></section>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE: PORTFOLIO
+══════════════════════════════════════ -->
+<div id="page-portfolio" class="page">
+  <section class="pt-40 pb-24 bg-gradient-to-br from-navy to-slate-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 grid-pattern opacity-20"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center">
+      <span class="text-cyan font-inter font-semibold text-sm uppercase tracking-widest">Our Work</span>
+      <h1 class="font-poppins font-extrabold text-5xl lg:text-7xl mt-4 mb-6">Portfolio</h1>
+      <p class="text-slate-300 text-xl max-w-2xl mx-auto">A selection of projects that showcase our expertise across industries and technology stacks.</p>
+    </div>
+  </section>
+
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <!-- Filter buttons -->
+      <div class="flex flex-wrap gap-3 justify-center mb-12 reveal">
+        <button class="portfolio-filter active px-5 py-2 rounded-full text-sm font-medium border-2 border-royal text-royal hover:bg-royal hover:text-white transition-all" data-filter="all" onclick="filterPortfolio('all', this)">All</button>
+        <button class="portfolio-filter px-5 py-2 rounded-full text-sm font-medium border-2 border-slate-200 text-slate-500 hover:border-royal hover:text-royal transition-all" data-filter="software" onclick="filterPortfolio('software', this)">Software</button>
+        <button class="portfolio-filter px-5 py-2 rounded-full text-sm font-medium border-2 border-slate-200 text-slate-500 hover:border-royal hover:text-royal transition-all" data-filter="web" onclick="filterPortfolio('web', this)">Web</button>
+        <button class="portfolio-filter px-5 py-2 rounded-full text-sm font-medium border-2 border-slate-200 text-slate-500 hover:border-royal hover:text-royal transition-all" data-filter="mobile" onclick="filterPortfolio('mobile', this)">Mobile</button>
+        <button class="portfolio-filter px-5 py-2 rounded-full text-sm font-medium border-2 border-slate-200 text-slate-500 hover:border-royal hover:text-royal transition-all" data-filter="cloud" onclick="filterPortfolio('cloud', this)">Cloud</button>
+        <button class="portfolio-filter px-5 py-2 rounded-full text-sm font-medium border-2 border-slate-200 text-slate-500 hover:border-royal hover:text-royal transition-all" data-filter="security" onclick="filterPortfolio('security', this)">Security</button>
+      </div>
+
+      <!-- Project grid -->
+      <div id="portfolio-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="portfolio-item rounded-2xl overflow-hidden border border-slate-100 card-hover reveal" data-category="software">
+          <div class="h-48 bg-gradient-to-br from-royal to-cyan flex items-center justify-center">
+            <span class="text-6xl">🏦</span>
+          </div>
+          <div class="p-6">
+            <div class="flex gap-2 mb-3 flex-wrap"><span class="tech-badge">React</span><span class="tech-badge">Node.js</span><span class="tech-badge">PostgreSQL</span></div>
+            <h3 class="font-poppins font-bold text-navy text-lg mb-2">National Credit Union Portal</h3>
+            <p class="text-slate-500 text-sm mb-3">Digital banking platform serving 40,000+ customers across Uganda with real-time transactions and reporting.</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-slate-400">Finance</span>
+              <button class="text-royal font-semibold text-sm hover:underline">View Case Study →</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item rounded-2xl overflow-hidden border border-slate-100 card-hover reveal delay-100" data-category="web">
+          <div class="h-48 bg-gradient-to-br from-purple-600 to-purple-400 flex items-center justify-center">
+            <span class="text-6xl">🏛️</span>
+          </div>
+          <div class="p-6">
+            <div class="flex gap-2 mb-3 flex-wrap"><span class="tech-badge">Next.js</span><span class="tech-badge">Tailwind</span><span class="tech-badge">Sanity CMS</span></div>
+            <h3 class="font-poppins font-bold text-navy text-lg mb-2">MICT Digital Services Portal</h3>
+            <p class="text-slate-500 text-sm mb-3">Government citizen services portal handling 1M+ monthly requests across 40+ ministries and departments.</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-slate-400">Government</span>
+              <button class="text-royal font-semibold text-sm hover:underline">View Case Study →</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item rounded-2xl overflow-hidden border border-slate-100 card-hover reveal delay-200" data-category="mobile">
+          <div class="h-48 bg-gradient-to-br from-emerald-600 to-emerald-400 flex items-center justify-center">
+            <span class="text-6xl">🌾</span>
+          </div>
+          <div class="p-6">
+            <div class="flex gap-2 mb-3 flex-wrap"><span class="tech-badge">Flutter</span><span class="tech-badge">Firebase</span><span class="tech-badge">IoT</span></div>
+            <h3 class="font-poppins font-bold text-navy text-lg mb-2">AgriTrack Farmer Platform</h3>
+            <p class="text-slate-500 text-sm mb-3">Crop monitoring and market linkage app connecting 5,000+ smallholder farmers to buyers and extension services.</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-slate-400">Agriculture</span>
+              <button class="text-royal font-semibold text-sm hover:underline">View Case Study →</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item rounded-2xl overflow-hidden border border-slate-100 card-hover reveal" data-category="cloud">
+          <div class="h-48 bg-gradient-to-br from-amber-600 to-orange-500 flex items-center justify-center">
+            <span class="text-6xl">🏥</span>
+          </div>
+          <div class="p-6">
+            <div class="flex gap-2 mb-3 flex-wrap"><span class="tech-badge">AWS</span><span class="tech-badge">Python</span><span class="tech-badge">Docker</span></div>
+            <h3 class="font-poppins font-bold text-navy text-lg mb-2">Mubarak Hospital Cloud Migration</h3>
+            <p class="text-slate-500 text-sm mb-3">Full migration of on-premise hospital management system to AWS with 99.99% uptime SLA.</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-slate-400">Healthcare</span>
+              <button class="text-royal font-semibold text-sm hover:underline">View Case Study →</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item rounded-2xl overflow-hidden border border-slate-100 card-hover reveal delay-100" data-category="security">
+          <div class="h-48 bg-gradient-to-br from-red-700 to-red-500 flex items-center justify-center">
+            <span class="text-6xl">🔐</span>
+          </div>
+          <div class="p-6">
+            <div class="flex gap-2 mb-3 flex-wrap"><span class="tech-badge">PenTest</span><span class="tech-badge">SIEM</span><span class="tech-badge">ISO 27001</span></div>
+            <h3 class="font-poppins font-bold text-navy text-lg mb-2">Centenary Bank Security Audit</h3>
+            <p class="text-slate-500 text-sm mb-3">Comprehensive penetration test and security audit for Uganda's largest indigenous bank covering 100+ endpoints.</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-slate-400">Finance</span>
+              <button class="text-royal font-semibold text-sm hover:underline">View Case Study →</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item rounded-2xl overflow-hidden border border-slate-100 card-hover reveal delay-200" data-category="web">
+          <div class="h-48 bg-gradient-to-br from-rose-600 to-pink-400 flex items-center justify-center">
+            <span class="text-6xl">🏨</span>
+          </div>
+          <div class="p-6">
+            <div class="flex gap-2 mb-3 flex-wrap"><span class="tech-badge">Next.js</span><span class="tech-badge">Stripe</span><span class="tech-badge">Prisma</span></div>
+            <h3 class="font-poppins font-bold text-navy text-lg mb-2">Lake Heights Resort Booking</h3>
+            <p class="text-slate-500 text-sm mb-3">Custom booking engine and property management system for a 5-star resort on Lake Victoria. 40% increase in direct bookings.</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-slate-400">Hospitality</span>
+              <button class="text-royal font-semibold text-sm hover:underline">View Case Study →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE: INDUSTRIES
+══════════════════════════════════════ -->
+<div id="page-industries" class="page">
+  <section class="pt-40 pb-24 bg-gradient-to-br from-navy to-slate-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 grid-pattern opacity-20"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center">
+      <span class="text-cyan font-inter font-semibold text-sm uppercase tracking-widest">Sectors</span>
+      <h1 class="font-poppins font-extrabold text-5xl lg:text-7xl mt-4 mb-6">Industries We Serve</h1>
+      <p class="text-slate-300 text-xl max-w-2xl mx-auto">Deep domain expertise across Uganda's most important sectors. We understand the regulatory, operational, and cultural context of each industry.</p>
+    </div>
+  </section>
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="space-y-16">
+        <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
+          <div class="rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 p-10 border border-blue-100">
+            <div class="text-5xl mb-4">🎓</div>
+            <h3 class="font-poppins font-extrabold text-3xl text-navy mb-3">Education</h3>
+            <p class="text-slate-500 leading-relaxed mb-4">From e-learning platforms to student information systems, we build technology that enhances learning outcomes and reduces administrative burden.</p>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li class="flex items-center gap-2"><span class="text-cyan font-bold">✓</span> E-learning platforms & LMS</li>
+              <li class="flex items-center gap-2"><span class="text-cyan font-bold">✓</span> Student management systems</li>
+              <li class="flex items-center gap-2"><span class="text-cyan font-bold">✓</span> Examination & assessment tools</li>
+              <li class="flex items-center gap-2"><span class="text-cyan font-bold">✓</span> Library management systems</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl bg-gradient-to-br from-red-50 to-rose-50 p-10 border border-red-100">
+            <div class="text-5xl mb-4">🏥</div>
+            <h3 class="font-poppins font-extrabold text-3xl text-navy mb-3">Healthcare</h3>
+            <p class="text-slate-500 leading-relaxed mb-4">HIPAA-aware systems that help healthcare providers focus on patients, not paperwork. We understand the critical nature of uptime and data accuracy in medical settings.</p>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li class="flex items-center gap-2"><span class="text-cyan font-bold">✓</span> Hospital management systems (HMS)</li>
+              <li class="flex items-center gap-2"><span class="text-cyan font-bold">✓</span> Electronic health records (EHR)</li>
+              <li class="flex items-center gap-2"><span class="text-cyan font-bold">✓</span> Telemedicine platforms</li>
+              <li class="flex items-center gap-2"><span class="text-cyan font-bold">✓</span> Medical inventory & pharmacy</li>
+            </ul>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+          <div class="rounded-2xl bg-slate-50 border border-slate-100 p-8 card-hover text-center">
+            <div class="text-4xl mb-3">🏛️</div>
+            <h4 class="font-poppins font-bold text-navy mb-2">Government</h4>
+            <p class="text-slate-500 text-sm">Digital services portals, e-government platforms, and citizen engagement systems.</p>
+          </div>
+          <div class="rounded-2xl bg-slate-50 border border-slate-100 p-8 card-hover text-center">
+            <div class="text-4xl mb-3">🏦</div>
+            <h4 class="font-poppins font-bold text-navy mb-2">Finance</h4>
+            <p class="text-slate-500 text-sm">Digital banking, microfinance platforms, mobile money integration, and fraud detection.</p>
+          </div>
+          <div class="rounded-2xl bg-slate-50 border border-slate-100 p-8 card-hover text-center">
+            <div class="text-4xl mb-3">🏭</div>
+            <h4 class="font-poppins font-bold text-navy mb-2">Manufacturing</h4>
+            <p class="text-slate-500 text-sm">ERP, inventory management, supply chain tracking, and IoT-enabled production monitoring.</p>
+          </div>
+          <div class="rounded-2xl bg-slate-50 border border-slate-100 p-8 card-hover text-center">
+            <div class="text-4xl mb-3">🌾</div>
+            <h4 class="font-poppins font-bold text-navy mb-2">Agriculture</h4>
+            <p class="text-slate-500 text-sm">Farm management software, market linkage platforms, agronomic data tools, and cold chain tracking.</p>
+          </div>
+          <div class="rounded-2xl bg-slate-50 border border-slate-100 p-8 card-hover text-center">
+            <div class="text-4xl mb-3">🏪</div>
+            <h4 class="font-poppins font-bold text-navy mb-2">Retail</h4>
+            <p class="text-slate-500 text-sm">POS systems, inventory management, e-commerce, and customer loyalty platforms.</p>
+          </div>
+          <div class="rounded-2xl bg-slate-50 border border-slate-100 p-8 card-hover text-center">
+            <div class="text-4xl mb-3">🚚</div>
+            <h4 class="font-poppins font-bold text-navy mb-2">Logistics</h4>
+            <p class="text-slate-500 text-sm">Fleet management, route optimisation, warehouse management, and last-mile delivery tracking.</p>
+          </div>
+          <div class="rounded-2xl bg-slate-50 border border-slate-100 p-8 card-hover text-center">
+            <div class="text-4xl mb-3">🏨</div>
+            <h4 class="font-poppins font-bold text-navy mb-2">Hospitality</h4>
+            <p class="text-slate-500 text-sm">Property management, booking engines, guest experience platforms, and POS for F&B.</p>
+          </div>
+          <div class="rounded-2xl bg-slate-50 border border-slate-100 p-8 card-hover text-center">
+            <div class="text-4xl mb-3">🤝</div>
+            <h4 class="font-poppins font-bold text-navy mb-2">NGOs</h4>
+            <p class="text-slate-500 text-sm">Grant tracking, beneficiary management, field reporting tools, and impact measurement dashboards.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE: BLOG
+══════════════════════════════════════ -->
+<div id="page-blog" class="page">
+  <section class="pt-40 pb-24 bg-gradient-to-br from-navy to-slate-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 grid-pattern opacity-20"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center">
+      <span class="text-cyan font-inter font-semibold text-sm uppercase tracking-widest">Insights</span>
+      <h1 class="font-poppins font-extrabold text-5xl lg:text-7xl mt-4 mb-6">Blog & News</h1>
+      <p class="text-slate-300 text-xl max-w-2xl mx-auto">Technology news, guides, and analysis from the ScottsTechX team.</p>
+    </div>
+  </section>
+  <section class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <!-- Search & Filter -->
+      <div class="flex flex-wrap gap-4 mb-12 reveal">
+        <input type="text" placeholder="Search articles..." class="flex-1 min-w-64 bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm font-inter outline-none focus:border-royal transition-colors" oninput="filterBlog(this.value)">
+        <button class="blog-cat px-4 py-2 rounded-full text-sm font-medium bg-royal text-white" onclick="setBlogCategory('all', this)">All</button>
+        <button class="blog-cat px-4 py-2 rounded-full text-sm font-medium bg-white border border-slate-200 text-slate-500 hover:border-royal hover:text-royal" onclick="setBlogCategory('ai', this)">AI</button>
+        <button class="blog-cat px-4 py-2 rounded-full text-sm font-medium bg-white border border-slate-200 text-slate-500 hover:border-royal hover:text-royal" onclick="setBlogCategory('security', this)">Security</button>
+        <button class="blog-cat px-4 py-2 rounded-full text-sm font-medium bg-white border border-slate-200 text-slate-500 hover:border-royal hover:text-royal" onclick="setBlogCategory('cloud', this)">Cloud</button>
+        <button class="blog-cat px-4 py-2 rounded-full text-sm font-medium bg-white border border-slate-200 text-slate-500 hover:border-royal hover:text-royal" onclick="setBlogCategory('dev', this)">Dev</button>
+      </div>
+      <div id="blog-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="blog-card rounded-2xl overflow-hidden bg-white border border-slate-100 card-hover reveal" data-category="ai">
+          <div class="h-48 bg-gradient-to-br from-navy to-royal flex items-center justify-center"><span class="text-6xl">🤖</span></div>
+          <div class="p-6">
+            <div class="flex gap-2 mb-3"><span class="text-xs font-semibold text-cyan bg-cyan/10 px-3 py-1 rounded-full">AI</span><span class="text-xs text-slate-400">Dec 12, 2025</span></div>
+            <h3 class="font-poppins font-bold text-navy text-base mb-2">How AI is Transforming Small Business Operations in Uganda</h3>
+            <p class="text-slate-500 text-sm mb-4">Affordable AI tools are now within reach for SMEs. Here's how to get started without a data science team.</p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2"><div class="w-6 h-6 rounded-full bg-gradient-to-br from-royal to-cyan flex items-center justify-center text-white text-[10px] font-bold">FJ</div><span class="text-xs text-slate-400">Fred Scotts</span></div>
+              <span class="text-xs text-slate-400">8 min read</span>
+            </div>
+          </div>
+        </div>
+        <div class="blog-card rounded-2xl overflow-hidden bg-white border border-slate-100 card-hover reveal delay-100" data-category="security">
+          <div class="h-48 bg-gradient-to-br from-red-700 to-red-500 flex items-center justify-center"><span class="text-6xl">🔐</span></div>
+          <div class="p-6">
+            <div class="flex gap-2 mb-3"><span class="text-xs font-semibold text-red-500 bg-red-50 px-3 py-1 rounded-full">Security</span><span class="text-xs text-slate-400">Nov 28, 2025</span></div>
+            <h3 class="font-poppins font-bold text-navy text-base mb-2">The Top 5 Cybersecurity Threats Facing Ugandan Businesses in 2026</h3>
+            <p class="text-slate-500 text-sm mb-4">Ransomware and phishing attacks are rising sharply. Here's how to protect your organisation from the most common attack vectors.</p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2"><div class="w-6 h-6 rounded-full bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center text-white text-[10px] font-bold">AK</div><span class="text-xs text-slate-400">Amina Kibira</span></div>
+              <span class="text-xs text-slate-400">12 min read</span>
+            </div>
+          </div>
+        </div>
+        <div class="blog-card rounded-2xl overflow-hidden bg-white border border-slate-100 card-hover reveal delay-200" data-category="cloud">
+          <div class="h-48 bg-gradient-to-br from-cyan-700 to-cyan-500 flex items-center justify-center"><span class="text-6xl">☁️</span></div>
+          <div class="p-6">
+            <div class="flex gap-2 mb-3"><span class="text-xs font-semibold text-blue-500 bg-blue-50 px-3 py-1 rounded-full">Cloud</span><span class="text-xs text-slate-400">Nov 10, 2025</span></div>
+            <h3 class="font-poppins font-bold text-navy text-base mb-2">Cloud Migration Done Right: A Practical Guide for East African Enterprises</h3>
+            <p class="text-slate-500 text-sm mb-4">Moving to the cloud doesn't have to be disruptive. A phased approach that works for organisations of any size.</p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2"><div class="w-6 h-6 rounded-full bg-gradient-to-br from-emerald-600 to-emerald-400 flex items-center justify-center text-white text-[10px] font-bold">RM</div><span class="text-xs text-slate-400">Robert Musoke</span></div>
+              <span class="text-xs text-slate-400">10 min read</span>
+            </div>
+          </div>
+        </div>
+        <div class="blog-card rounded-2xl overflow-hidden bg-white border border-slate-100 card-hover reveal" data-category="dev">
+          <div class="h-48 bg-gradient-to-br from-slate-700 to-slate-500 flex items-center justify-center"><span class="text-6xl">⚙️</span></div>
+          <div class="p-6">
+            <div class="flex gap-2 mb-3"><span class="text-xs font-semibold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">Dev</span><span class="text-xs text-slate-400">Oct 22, 2025</span></div>
+            <h3 class="font-poppins font-bold text-navy text-base mb-2">Why We Chose React for Enterprise Front-ends in 2025</h3>
+            <p class="text-slate-500 text-sm mb-4">A candid look at why React remains our go-to choice for complex enterprise applications, and where alternatives make more sense.</p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2"><div class="w-6 h-6 rounded-full bg-gradient-to-br from-amber-600 to-orange-500 flex items-center justify-center text-white text-[10px] font-bold">SN</div><span class="text-xs text-slate-400">Sarah Nabisere</span></div>
+              <span class="text-xs text-slate-400">6 min read</span>
+            </div>
+          </div>
+        </div>
+        <div class="blog-card rounded-2xl overflow-hidden bg-white border border-slate-100 card-hover reveal delay-100" data-category="ai">
+          <div class="h-48 bg-gradient-to-br from-violet-700 to-violet-500 flex items-center justify-center"><span class="text-6xl">📊</span></div>
+          <div class="p-6">
+            <div class="flex gap-2 mb-3"><span class="text-xs font-semibold text-violet-500 bg-violet-50 px-3 py-1 rounded-full">AI</span><span class="text-xs text-slate-400">Oct 5, 2025</span></div>
+            <h3 class="font-poppins font-bold text-navy text-base mb-2">Building a Production-Ready RAG System on a Budget</h3>
+            <p class="text-slate-500 text-sm mb-4">Retrieval-Augmented Generation doesn't require an enterprise budget. Here's how to build one for under $500/month.</p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2"><div class="w-6 h-6 rounded-full bg-gradient-to-br from-royal to-cyan flex items-center justify-center text-white text-[10px] font-bold">FJ</div><span class="text-xs text-slate-400">Fred Scotts</span></div>
+              <span class="text-xs text-slate-400">15 min read</span>
+            </div>
+          </div>
+        </div>
+        <div class="blog-card rounded-2xl overflow-hidden bg-white border border-slate-100 card-hover reveal delay-200" data-category="security">
+          <div class="h-48 bg-gradient-to-br from-orange-700 to-amber-600 flex items-center justify-center"><span class="text-6xl">🔑</span></div>
+          <div class="p-6">
+            <div class="flex gap-2 mb-3"><span class="text-xs font-semibold text-amber-600 bg-amber-50 px-3 py-1 rounded-full">Security</span><span class="text-xs text-slate-400">Sep 18, 2025</span></div>
+            <h3 class="font-poppins font-bold text-navy text-base mb-2">Zero Trust Architecture: Why Uganda's Banks Need to Pay Attention</h3>
+            <p class="text-slate-500 text-sm mb-4">The traditional castle-and-moat security model is dead. Here's why Ugandan financial institutions need to adopt Zero Trust now.</p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2"><div class="w-6 h-6 rounded-full bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center text-white text-[10px] font-bold">AK</div><span class="text-xs text-slate-400">Amina Kibira</span></div>
+              <span class="text-xs text-slate-400">11 min read</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE: CAREERS
+══════════════════════════════════════ -->
+<div id="page-careers" class="page">
+  <section class="pt-40 pb-24 bg-gradient-to-br from-navy to-slate-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 grid-pattern opacity-20"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center">
+      <span class="text-cyan font-inter font-semibold text-sm uppercase tracking-widest">Join Us</span>
+      <h1 class="font-poppins font-extrabold text-5xl lg:text-7xl mt-4 mb-6">Careers</h1>
+      <p class="text-slate-300 text-xl max-w-2xl mx-auto">We're always looking for exceptional people who want to build meaningful technology in Uganda.</p>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <h2 class="font-poppins font-extrabold text-4xl text-navy mb-4">Why Work With Us</h2>
+        <p class="text-slate-500 text-lg max-w-2xl mx-auto">We're building something different — a company where great engineers do the best work of their careers.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 mb-24">
+        <div class="glass-card rounded-2xl p-8 text-center card-hover reveal">
+          <div class="text-4xl mb-4">💡</div>
+          <h4 class="font-poppins font-bold text-navy text-lg mb-2">Meaningful Projects</h4>
+          <p class="text-slate-500 text-sm">Work on projects that genuinely impact millions of Ugandans — not another SaaS marketing tool.</p>
+        </div>
+        <div class="glass-card rounded-2xl p-8 text-center card-hover reveal delay-100">
+          <div class="text-4xl mb-4">📈</div>
+          <h4 class="font-poppins font-bold text-navy text-lg mb-2">Growth & Learning</h4>
+          <p class="text-slate-500 text-sm">Annual learning budget, conference attendance, and a structured mentorship programme.</p>
+        </div>
+        <div class="glass-card rounded-2xl p-8 text-center card-hover reveal delay-200">
+          <div class="text-4xl mb-4">⚖️</div>
+          <h4 class="font-poppins font-bold text-navy text-lg mb-2">Work-Life Balance</h4>
+          <p class="text-slate-500 text-sm">Flexible hours, remote work options, and a culture that respects your time outside work.</p>
+        </div>
+      </div>
+
+      <!-- Open Positions -->
+      <div class="reveal">
+        <h2 class="font-poppins font-extrabold text-4xl text-navy text-center mb-12">Open Positions</h2>
+        <div class="space-y-4 max-w-3xl mx-auto">
+          <div class="border border-slate-200 rounded-xl p-6 hover:border-royal/30 hover:shadow-lg transition-all cursor-pointer">
+            <div class="flex justify-between items-start mb-2">
+              <h4 class="font-poppins font-bold text-navy text-lg">Senior Full-Stack Engineer</h4>
+              <span class="text-xs font-medium text-white bg-royal px-3 py-1 rounded-full">Full-time</span>
+            </div>
+            <p class="text-slate-500 text-sm mb-3">Kampala, Uganda · KES 180,000 – 280,000 /month</p>
+            <p class="text-slate-600 text-sm">We're looking for a senior engineer to lead development on our enterprise SaaS products. You'll own technical decisions and mentor junior team members.</p>
+            <button class="btn-primary mt-4 text-sm py-2 px-5" onclick="openApplication('Senior Full-Stack Engineer')">Apply Now</button>
+          </div>
+          <div class="border border-slate-200 rounded-xl p-6 hover:border-royal/30 hover:shadow-lg transition-all cursor-pointer">
+            <div class="flex justify-between items-start mb-2">
+              <h4 class="font-poppins font-bold text-navy text-lg">Cloud Infrastructure Engineer</h4>
+              <span class="text-xs font-medium text-white bg-cyan px-3 py-1 rounded-full">Full-time</span>
+            </div>
+            <p class="text-slate-500 text-sm mb-3">Kampala, Uganda · KES 150,000 – 220,000 /month</p>
+            <p class="text-slate-600 text-sm">Design and manage cloud infrastructure for multiple client projects. AWS and Azure experience required. Terraform and Kubernetes expertise essential.</p>
+            <button class="btn-primary mt-4 text-sm py-2 px-5" onclick="openApplication('Cloud Infrastructure Engineer')">Apply Now</button>
+          </div>
+          <div class="border border-slate-200 rounded-xl p-6 hover:border-royal/30 hover:shadow-lg transition-all cursor-pointer">
+            <div class="flex justify-between items-start mb-2">
+              <h4 class="font-poppins font-bold text-navy text-lg">UX/UI Designer</h4>
+              <span class="text-xs font-medium text-white bg-emerald-600 px-3 py-1 rounded-full">Full-time</span>
+            </div>
+            <p class="text-slate-500 text-sm mb-3">Kampala, Uganda · KES 120,000 – 180,000 /month</p>
+            <p class="text-slate-600 text-sm">Create beautiful, functional interfaces for our client projects and internal products. Figma expertise required. User research experience a plus.</p>
+            <button class="btn-primary mt-4 text-sm py-2 px-5" onclick="openApplication('UX/UI Designer')">Apply Now</button>
+          </div>
+          <div class="border border-slate-200 rounded-xl p-6 hover:border-royal/30 hover:shadow-lg transition-all cursor-pointer">
+            <div class="flex justify-between items-start mb-2">
+              <h4 class="font-poppins font-bold text-navy text-lg">Cybersecurity Analyst</h4>
+              <span class="text-xs font-medium text-white bg-red-600 px-3 py-1 rounded-full">Full-time</span>
+            </div>
+            <p class="text-slate-500 text-sm mb-3">Kampala, Uganda · KES 160,000 – 240,000 /month</p>
+            <p class="text-slate-600 text-sm">Conduct penetration tests, security audits, and vulnerability assessments across our client portfolio. OSCP or CEH certification required.</p>
+            <button class="btn-primary mt-4 text-sm py-2 px-5" onclick="openApplication('Cybersecurity Analyst')">Apply Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE: CONTACT
+══════════════════════════════════════ -->
+<div id="page-contact" class="page">
+  <section class="pt-40 pb-24 bg-gradient-to-br from-navy to-slate-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 grid-pattern opacity-20"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center">
+      <span class="text-cyan font-inter font-semibold text-sm uppercase tracking-widest">Contact</span>
+      <h1 class="font-poppins font-extrabold text-5xl lg:text-7xl mt-4 mb-6">Get in Touch</h1>
+      <p class="text-slate-300 text-xl max-w-2xl mx-auto">Have a project in mind? We'd love to hear from you. Let's discuss how we can help.</p>
+    </div>
+  </section>
+
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-5 gap-16">
+        <!-- Contact Info -->
+        <div class="lg:col-span-2 space-y-8">
+          <div class="glass-card rounded-2xl p-8">
+            <h3 class="font-poppins font-bold text-navy text-xl mb-6">Contact Information</h3>
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-royal/10 flex items-center justify-center flex-shrink-0">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0056D2" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <p class="font-semibold text-navy text-sm mb-1">Office Address</p>
+                  <p class="text-slate-500 text-sm">Plot 42, Kampala Road, Kampala, Uganda</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-royal/10 flex items-center justify-center flex-shrink-0">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0056D2" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.37 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div>
+                  <p class="font-semibold text-navy text-sm mb-1">Phone / WhatsApp</p>
+                  <p class="text-slate-500 text-sm">+256 700 000 000</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-royal/10 flex items-center justify-center flex-shrink-0">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0056D2" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+                </div>
+                <div>
+                  <p class="font-semibold text-navy text-sm mb-1">Email</p>
+                  <p class="text-slate-500 text-sm">contact@scottstechx.com</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-royal/10 flex items-center justify-center flex-shrink-0">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0056D2" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                </div>
+                <div>
+                  <p class="font-semibold text-navy text-sm mb-1">Business Hours</p>
+                  <p class="text-slate-500 text-sm">Mon–Fri: 8:00 AM – 6:00 PM EAT<br>Sat: 9:00 AM – 1:00 PM EAT</p>
+                </div>
+              </div>
+            </div>
+            <!-- Social links -->
+            <div class="flex gap-3 mt-8 pt-6 border-t border-slate-100">
+              <a href="#" class="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-slate-400 hover:bg-royal hover:text-white transition-all">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <a href="https://linkedin.com/company/scottstechx" class="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-slate-400 hover:bg-royal hover:text-white transition-all" target="_blank" rel="noopener">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="https://github.com/fredscottsbull" class="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-slate-400 hover:bg-royal hover:text-white transition-all" target="_blank" rel="noopener">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.11.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.52 11.52 0 0 1 3-.405 11.52 11.52 0 0 1 3 .405c2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <!-- Map placeholder -->
+          <div class="rounded-2xl overflow-hidden border border-slate-200 h-56 bg-gradient-to-br from-slate-100 to-slate-50 flex items-center justify-center">
+            <div class="text-center">
+              <div class="text-4xl mb-2">📍</div>
+              <p class="text-slate-400 text-sm font-medium">Plot 42, Kampala Road</p>
+              <p class="text-slate-400 text-xs">Kampala, Uganda</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="lg:col-span-3">
+          <div class="glass-card rounded-2xl p-8 lg:p-10">
+            <h3 class="font-poppins font-bold text-navy text-2xl mb-2">Send Us a Message</h3>
+            <p class="text-slate-500 text-sm mb-8">This static preview prepares a secure draft email in your mail application. Production deployment should connect this form to an authenticated, rate-limited server endpoint.</p>
+            <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-5">
+              <div class="grid md:grid-cols-2 gap-5">
+                <div>
+                  <label class="block text-sm font-semibold text-navy mb-2">Full Name *</label>
+                  <input type="text" name="name" required placeholder="Your name" class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm font-inter outline-none focus:border-royal transition-colors bg-white">
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold text-navy mb-2">Email Address *</label>
+                  <input type="email" name="email" required placeholder="you@company.com" class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm font-inter outline-none focus:border-royal transition-colors bg-white">
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-5">
+                <div>
+                  <label class="block text-sm font-semibold text-navy mb-2">Phone</label>
+                  <input type="tel" name="phone" placeholder="+256 700 000 000" class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm font-inter outline-none focus:border-royal transition-colors bg-white">
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold text-navy mb-2">Company</label>
+                  <input type="text" name="company" placeholder="Your company name" class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm font-inter outline-none focus:border-royal transition-colors bg-white">
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-navy mb-2">Service Interested In *</label>
+                <select name="service" required class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm font-inter outline-none focus:border-royal transition-colors bg-white text-slate-600">
+                  <option value="">Select a service</option>
+                  <option>Software Development</option>
+                  <option>Website Development</option>
+                  <option>Mobile App Development</option>
+                  <option>Cloud Solutions</option>
+                  <option>Cybersecurity</option>
+                  <option>IT Consulting</option>
+                  <option>Digital Transformation</option>
+                  <option>Managed IT Services</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-navy mb-2">Budget Range</label>
+                <select name="budget" class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm font-inter outline-none focus:border-royal transition-colors bg-white text-slate-600">
+                  <option value="">Prefer not to say</option>
+                  <option>Under UGX 5,000,000</option>
+                  <option>UGX 5,000,000 – 15,000,000</option>
+                  <option>UGX 15,000,000 – 50,000,000</option>
+                  <option>UGX 50,000,000 – 100,000,000</option>
+                  <option>Over UGX 100,000,000</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-navy mb-2">Message *</label>
+                <textarea name="message" required rows="5" placeholder="Tell us about your project, timeline, and goals..." class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm font-inter outline-none focus:border-royal transition-colors bg-white resize-none"></textarea>
+              </div>
+              <button type="submit" id="contact-submit" class="btn-primary w-full justify-center flex items-center gap-2 text-center">
+                Send Message
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+              </button>
+            </form>
+            <div id="contact-success" style="display:none;" class="mt-6 p-6 bg-emerald-50 border border-emerald-200 rounded-xl text-center">
+              <div class="text-3xl mb-2">✉️</div>
+              <p class="font-poppins font-bold text-emerald-700 text-lg">Email draft prepared</p>
+              <p class="text-emerald-600 text-sm mt-1">Review and send it from your mail application. No message has been transmitted by this static website.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</main>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer class="bg-navy text-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-3 mb-6">
+          <img src="brand-mark.png" alt="" width="44" height="44" class="rounded-xl">
+          <div>
+            <span class="font-poppins font-bold text-lg text-white block">ScottsTechX</span>
+            <span class="text-[10px] text-slate-400 tracking-wider uppercase">Enterprise (U) Ltd</span>
+          </div>
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed mb-4">Empowering Ugandan businesses through innovative technology. Your trusted partner for software, cloud, security, and digital transformation.</p>
+      </div>
+      <!-- Services -->
+      <div>
+        <h4 class="font-poppins font-semibold text-white mb-5">Services</h4>
+        <ul class="space-y-3 text-sm text-slate-400">
+          <li><a href="#services" class="hover:text-white transition-colors">Software Development</a></li>
+          <li><a href="#services" class="hover:text-white transition-colors">Website Development</a></li>
+          <li><a href="#services" class="hover:text-white transition-colors">Mobile Apps</a></li>
+          <li><a href="#services" class="hover:text-white transition-colors">Cloud Solutions</a></li>
+          <li><a href="#services" class="hover:text-white transition-colors">Cybersecurity</a></li>
+          <li><a href="#sentinel" class="hover:text-white transition-colors">Sentinel AI Blueprint</a></li>
+          <li><a href="#services" class="hover:text-white transition-colors">IT Consulting</a></li>
+        </ul>
+      </div>
+      <!-- Company -->
+      <div>
+        <h4 class="font-poppins font-semibold text-white mb-5">Company</h4>
+        <ul class="space-y-3 text-sm text-slate-400">
+          <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="#portfolio" class="hover:text-white transition-colors">Portfolio</a></li>
+          <li><a href="#blog" class="hover:text-white transition-colors">Blog</a></li>
+          <li><a href="#careers" class="hover:text-white transition-colors">Careers</a></li>
+          <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <!-- Contact -->
+      <div>
+        <h4 class="font-poppins font-semibold text-white mb-5">Contact</h4>
+        <ul class="space-y-3 text-sm text-slate-400">
+          <li>Plot 42, Kampala Road</li>
+          <li>Kampala, Uganda</li>
+          <li>+256 740396825</li>
+          <li>scottstechx@gmail.com</li>
+        </ul>
+        <div class="flex gap-3 mt-6">
+          <a href="https://linkedin.com/company/scottstechx" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center text-slate-300 hover:bg-royal transition-all">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://github.com/fredscottsbull" target="_blank" rel="noopener" class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center text-slate-300 hover:bg-royal transition-all">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.11.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.52 11.52 0 0 1 3-.405 11.52 11.52 0 0 1 3 .405c2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-slate-500 text-sm">© 2026 ScottsTechX Enterprise (U) Ltd. All rights reserved.</p>
+      <div class="flex gap-6 text-sm text-slate-500">
+        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+        <a href="#" class="hover:text-white transition-colors">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════ -->
+<script>
+// ── Router ──
+const PAGES = ['home','about','services','sentinel','portfolio','industries','blog','careers','contact'];
+
+function navigateTo(page) {
+  window.location.hash = page;
+}
+
+function getCurrentPage() {
+  const hash = window.location.hash.replace('#','') || 'home';
+  return PAGES.includes(hash) ? hash : 'home';
+}
+
+function renderPage(page) {
+  document.querySelectorAll('.page').forEach(p => { p.classList.remove('active'); });
+  const el = document.getElementById('page-' + page);
+  if (el) {
+    el.classList.add('active');
+    window.scrollTo(0, 0);
+    initReveal(true);
+    updateNavActive(page);
+  }
+}
+
+function updateNavActive(page) {
+  document.querySelectorAll('.nav-link').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + page);
+  });
+}
+
+// ── Mobile Menu ──
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const open = document.getElementById('menu-icon-open');
+  const close = document.getElementById('menu-icon-close');
+  const isOpen = menu.classList.contains('open');
+  if (isOpen) {
+    menu.classList.remove('open');
+    menu.style.display = 'none';
+    open.classList.remove('hidden');
+    close.classList.add('hidden');
+  } else {
+    menu.style.display = 'flex';
+    requestAnimationFrame(() => menu.classList.add('open'));
+    open.classList.add('hidden');
+    close.classList.remove('hidden');
+  }
+  document.getElementById('menu-toggle').setAttribute('aria-expanded', String(!isOpen));
+}
+
+// ── Scroll Reveal ──
+function initReveal(onlyBelowFold = false) {
+  const els = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      } else if (!onlyBelowFold) {
+        // Reset elements scrolled back above viewport
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, { threshold: 0.05 });
+  els.forEach(el => {
+    if (!onlyBelowFold || el.getBoundingClientRect().top > window.innerHeight) {
+      el.classList.remove('visible');
+    }
+    observer.observe(el);
+  });
+}
+
+// ── Navbar scroll shadow ──
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  if (window.scrollY > 10) {
+    nav.classList.add('shadow-md');
+    nav.style.borderBottom = '1px solid rgba(0,0,0,0.06)';
+  } else {
+    nav.classList.remove('shadow-md');
+    nav.style.borderBottom = 'none';
+  }
+});
+
+// ── Accordion ──
+function toggleAccordion(btn) {
+  const content = btn.nextElementSibling;
+  const icon = btn.querySelector('.accordion-icon');
+  const isOpen = content.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('open'));
+  document.querySelectorAll('.accordion-icon').forEach(i => i.style.transform = '');
+  if (!isOpen) {
+    content.classList.add('open');
+    icon.style.transform = 'rotate(180deg)';
+  }
+}
+
+// ── Portfolio Filter ──
+function filterPortfolio(category, btn) {
+  document.querySelectorAll('.portfolio-filter').forEach(b => {
+    b.classList.remove('active', 'bg-royal', 'text-white', 'border-royal');
+    b.classList.add('border-slate-200', 'text-slate-500');
+  });
+  btn.classList.add('active', 'bg-royal', 'text-white', 'border-royal');
+  btn.classList.remove('border-slate-200', 'text-slate-500');
+
+  document.querySelectorAll('.portfolio-item').forEach(item => {
+    if (category === 'all' || item.dataset.category === category) {
+      item.style.display = '';
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(20px)';
+      requestAnimationFrame(() => {
+        item.style.transition = 'opacity 0.4s, transform 0.4s';
+        item.style.opacity = '1';
+        item.style.transform = '';
+      });
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+
+// ── Blog Filter ──
+function setBlogCategory(category, btn) {
+  document.querySelectorAll('.blog-cat').forEach(b => {
+    b.classList.remove('bg-royal', 'text-white');
+    b.classList.add('bg-white', 'border', 'border-slate-200', 'text-slate-500');
+  });
+  btn.classList.remove('bg-white', 'border', 'border-slate-200', 'text-slate-500');
+  btn.classList.add('bg-royal', 'text-white');
+
+  document.querySelectorAll('.blog-card').forEach(card => {
+    if (category === 'all' || card.dataset.category === category) {
+      card.style.display = '';
+      card.style.opacity = '0';
+      requestAnimationFrame(() => {
+        card.style.transition = 'opacity 0.4s';
+        card.style.opacity = '1';
+      });
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+function filterBlog(query) {
+  query = query.toLowerCase();
+  document.querySelectorAll('.blog-card').forEach(card => {
+    const text = card.textContent.toLowerCase();
+    card.style.display = text.includes(query) ? '' : 'none';
+  });
+}
+
+// ── Contact Form ──
+function handleContactSubmit(e) {
+  e.preventDefault();
+  const form = e.currentTarget;
+  const data = new FormData(form);
+  const subject = encodeURIComponent(`Website enquiry: ${data.get('service') || 'Technology services'}`);
+  const body = encodeURIComponent([
+    `Name: ${data.get('name') || ''}`,
+    `Email: ${data.get('email') || ''}`,
+    `Phone: ${data.get('phone') || ''}`,
+    `Company: ${data.get('company') || ''}`,
+    `Service: ${data.get('service') || ''}`,
+    `Budget: ${data.get('budget') || ''}`,
+    '',
+    String(data.get('message') || '')
+  ].join('\n'));
+  document.getElementById('contact-form').style.display = 'none';
+  document.getElementById('contact-success').style.display = 'block';
+  window.location.href = `mailto:contact@scottstechx.com?subject=${subject}&body=${body}`;
+}
+
+// ── Application modal (careers) ──
+function openApplication(position) {
+  navigateTo('contact');
+  setTimeout(() => {
+    const msg = document.querySelector('[name="message"]');
+    if (msg) msg.value = `I am applying for the ${position} position at ScottsTechX. `;
+    const service = document.querySelector('[name="service"]');
+    if (service) service.value = 'Other';
+  }, 300);
+}
+
+// ── Counter animation ──
+function animateCounters() {
+  document.querySelectorAll('.stat-number[data-target]').forEach(el => {
+    const target = parseInt(el.dataset.target);
+    const suffix = el.dataset.suffix || '';
+    let current = 0;
+    const step = target / 60;
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) { current = target; clearInterval(timer); }
+      el.textContent = Math.floor(current) + (target >= 10 ? '' : '');
+    }, 16);
+  });
+}
+
+// ── Init ──
+window.addEventListener('hashchange', () => renderPage(getCurrentPage()));
+window.addEventListener('load', () => {
+  renderPage(getCurrentPage());
+  setTimeout(animateCounters, 500);
+});
+
+// Scroll reveal on scroll
+window.addEventListener('scroll', initReveal);
+
+// ── PWA Service Worker ──────────────────────────────────────────────────────
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () =>
+    navigator.serviceWorker.register('sw.js').catch(() => {})
+  );
+}
+
+// ── Chat Widget ────────────────────────────────────────────────────────────
+const chatToggle = document.createElement('button');
+chatToggle.id = 'chat-toggle';
+chatToggle.type = 'button';
+chatToggle.setAttribute('aria-label', 'Open ScottsTechX AI chat');
+chatToggle.setAttribute('aria-expanded', 'false');
+chatToggle.setAttribute('aria-controls', 'chat-window');
+chatToggle.innerHTML = `<svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg><span id="chat-badge">1</span>`;
+document.body.appendChild(chatToggle);
+
+const chatWindow = document.createElement('div');
+chatWindow.id = 'chat-window';
+chatWindow.setAttribute('role', 'dialog');
+chatWindow.setAttribute('aria-label', 'ScottsTechX AI chat');
+chatWindow.innerHTML = `
+  <div id="chat-header">
+    <img src="brand-mark.png" alt="">
+    <div id="chat-header-text">
+      <h3>ScottsTechX AI</h3>
+      <p>Powered by Hermes · Online now</p>
+    </div>
+    <button id="chat-close" type="button" aria-label="Close chat" onclick="chatWindow.classList.remove('open'); chatToggle.setAttribute('aria-expanded', 'false')">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </button>
+  </div>
+  <div id="chat-messages">
+    <div class="chat-msg assistant">Hello! I'm ScottsTechX AI. How can I help your business today? Ask me about our services, solutions, or anything tech-related.</div>
+  </div>
+  <div id="chat-input-area">
+    <textarea id="chat-input" rows="1" placeholder="Ask me anything..."></textarea>
+    <button id="chat-send" disabled>
+      <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+    </button>
+  </div>`;
+document.body.appendChild(chatWindow);
+
+chatToggle.addEventListener('click', () => {
+  chatWindow.classList.toggle('open');
+  chatToggle.setAttribute('aria-expanded', String(chatWindow.classList.contains('open')));
+  document.getElementById('chat-badge').style.display = 'none';
+});
+
+const chatInput = document.getElementById('chat-input');
+const chatSendBtn = document.getElementById('chat-send');
+const chatMessages = document.getElementById('chat-messages');
+let chatConvId = '';
+let chatLoading = false;
+
+chatInput.addEventListener('input', () => {
+  chatSendBtn.disabled = !chatInput.value.trim();
+  chatInput.style.height = 'auto';
+  chatInput.style.height = Math.min(chatInput.scrollHeight, 80) + 'px';
+});
+chatInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendChat(); }
+});
+
+chatSendBtn.addEventListener('click', sendChat);
+
+function appendChatMsg(role, text) {
+  const div = document.createElement('div');
+  div.className = `chat-msg ${role}`;
+  div.textContent = text;
+  const time = document.createElement('div');
+  time.className = 'chat-time';
+  time.textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  div.appendChild(time);
+  chatMessages.appendChild(div);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+async function sendChat() {
+  const text = chatInput.value.trim();
+  if (!text || chatLoading) return;
+  chatLoading = true;
+  chatSendBtn.disabled = true;
+  chatInput.value = '';
+  chatInput.style.height = 'auto';
+  appendChatMsg('user', text);
+
+  const typing = document.createElement('div');
+  typing.className = 'chat-typing';
+  typing.textContent = 'Thinking...';
+  chatMessages.appendChild(typing);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+
+  try {
+    const resp = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: text, conversation_id: chatConvId })
+    });
+    chatMessages.removeChild(typing);
+    if (!resp.ok) throw new Error(resp.statusText);
+    const data = await resp.json();
+    chatConvId = data.conversation_id || chatConvId;
+    appendChatMsg('assistant', data.reply || data.content || 'Got it! Anything else?');
+  } catch (err) {
+    if (typing.parentNode === chatMessages) chatMessages.removeChild(typing);
+    appendChatMsg('assistant', 'Chat is unavailable in this static preview. Please use the contact form or email contact@scottstechx.com.');
+  } finally {
+    chatLoading = false;
+    chatSendBtn.disabled = !chatInput.value.trim();
+  }
+}
+
+// ── Three.js Hero Animation
+(function initHero3D() {
+  const canvas = document.getElementById('hero-bg-canvas');
+  if (!canvas || !window.THREE) return;
+
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setClearColor(0x000000, 0);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(60, 1, 0.1, 100);
+  camera.position.set(0, 0, 5);
+
+  // ── Particles ──────────────────────────────────────────────────────────
+  const COUNT = 280;
+  const positions = new Float32Array(COUNT * 3);
+  for (let i = 0; i < COUNT; i++) {
+    positions[i * 3]     = (Math.random() - 0.5) * 14;
+    positions[i * 3 + 1] = (Math.random() - 0.5) * 14;
+    positions[i * 3 + 2] = (Math.random() - 0.5) * 6;
+  }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  const mat = new THREE.PointsMaterial({
+    color: 0x0056D2, size: 0.06, transparent: true, opacity: 0.85
+  });
+  scene.add(new THREE.Points(geo, mat));
+
+  // Second particle layer — cyan
+  const geo2 = new THREE.BufferGeometry();
+  const pos2 = new Float32Array(120 * 3);
+  for (let i = 0; i < 120; i++) {
+    pos2[i * 3]     = (Math.random() - 0.5) * 14;
+    pos2[i * 3 + 1] = (Math.random() - 0.5) * 14;
+    pos2[i * 3 + 2] = (Math.random() - 0.5) * 6;
+  }
+  geo2.setAttribute('position', new THREE.BufferAttribute(pos2, 3));
+  const mat2 = new THREE.PointsMaterial({
+    color: 0x00B8D9, size: 0.04, transparent: true, opacity: 0.6
+  });
+  scene.add(new THREE.Points(geo2, mat2));
+
+  // ── Connections (lines between close particles) ─────────────────────────
+  const linePositions = [];
+  const tempV = new THREE.Vector3();
+  const MAX_DIST = 2.2;
+  for (let i = 0; i < COUNT; i++) {
+    tempV.set(positions[i*3], positions[i*3+1], positions[i*3+2]);
+    for (let j = i + 1; j < COUNT; j++) {
+      const dx = positions[j*3] - positions[i*3];
+      const dy = positions[j*3+1] - positions[i*3+1];
+      const dz = positions[j*3+2] - positions[i*3+2];
+      if (Math.sqrt(dx*dx + dy*dy + dz*dz) < MAX_DIST) {
+        linePositions.push(
+          positions[i*3], positions[i*3+1], positions[i*3+2],
+          positions[j*3], positions[j*3+1], positions[j*3+2]
+        );
+      }
+    }
+  }
+  const lineGeo = new THREE.BufferGeometry();
+  lineGeo.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
+  const lineMat = new THREE.LineBasicMaterial({
+    color: 0x0056D2, transparent: true, opacity: 0.15
+  });
+  scene.add(new THREE.LineSegments(lineGeo, lineMat));
+
+  // ── Central rotating torus ──────────────────────────────────────────────
+  const torusGeo = new THREE.TorusGeometry(1.4, 0.03, 8, 80);
+  const torusMat = new THREE.MeshBasicMaterial({ color: 0x00B8D9, transparent: true, opacity: 0.4 });
+  const torus = new THREE.Mesh(torusGeo, torusMat);
+  scene.add(torus);
+
+  const torusGeo2 = new THREE.TorusGeometry(2.0, 0.015, 8, 120);
+  const torusMat2 = new THREE.MeshBasicMaterial({ color: 0x0056D2, transparent: true, opacity: 0.2 });
+  const torus2 = new THREE.Mesh(torusGeo2, torusMat2);
+  scene.add(torus2);
+
+  // ── Central sphere ──────────────────────────────────────────────────────
+  const sphereGeo = new THREE.SphereGeometry(0.35, 32, 32);
+  const sphereMat = new THREE.MeshBasicMaterial({ color: 0x0056D2, wireframe: true, transparent: true, opacity: 0.5 });
+  const sphere = new THREE.Mesh(sphereGeo, sphereMat);
+  scene.add(sphere);
+
+  // ── Resize handling ────────────────────────────────────────────────────
+  function resize() {
+    const w = canvas.clientWidth;
+    const h = canvas.clientHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  // ── Mouse interaction ──────────────────────────────────────────────────
+  let mouseX = 0, mouseY = 0;
+  document.addEventListener('mousemove', e => {
+    mouseX = (e.clientX / window.innerWidth  - 0.5) * 2;
+    mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+  });
+
+  // ── Animate ────────────────────────────────────────────────────────────
+  let frame = 0;
+  function animate() {
+    requestAnimationFrame(animate);
+    frame++;
+    const t = frame * 0.005;
+
+    // Rotate particles slowly
+    geo.rotateY(0.0008);
+    geo2.rotateY(0.0012);
+
+    // Rotate torus rings
+    torus.rotation.x = t * 0.7;
+    torus.rotation.y = t * 0.5;
+    torus2.rotation.x = -t * 0.4;
+    torus2.rotation.z = t * 0.6;
+
+    // Pulse sphere
+    const scale = 1 + Math.sin(t * 2) * 0.08;
+    sphere.scale.set(scale, scale, scale);
+    sphere.rotation.y = t * 0.8;
+    sphere.rotation.x = t * 0.5;
+
+    // Camera gentle sway following mouse
+    camera.position.x += (mouseX * 0.6 - camera.position.x) * 0.02;
+    camera.position.y += (-mouseY * 0.4 - camera.position.y) * 0.02;
+    camera.lookAt(scene.position);
+
+    renderer.render(scene, camera);
+  }
+  animate();
+})();
+
+// ── About Page Three.js Background ────────────────────────────────────────────
+(function initAbout3D() {
+  const canvas = document.getElementById('about-bg-canvas');
+  if (!canvas || !window.THREE) return;
+
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setClearColor(0x000000, 0);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(60, 1, 0.1, 100);
+  camera.position.set(0, 0, 6);
+
+  // DNA Helix particles — staggered double helix
+  const COUNT = 180;
+  const linePositions = [];
+  for (let i = 0; i < COUNT; i++) {
+    const t = (i / COUNT) * Math.PI * 8;
+    const x1 = Math.cos(t) * 1.2;
+    const y1 = (i / COUNT) * 10 - 5;
+    const z1 = Math.sin(t) * 1.2;
+    const x2 = Math.cos(t + Math.PI) * 1.2;
+    const y2 = y1;
+    const z2 = Math.sin(t + Math.PI) * 1.2;
+    linePositions.push(x1, y1, z1, x2, y2, z2);
+    // Connecting rungs
+    if (i % 3 === 0) {
+      linePositions.push(x1, y1, z1, x2, y2, z2);
+    }
+  }
+  const lineGeo = new THREE.BufferGeometry();
+  lineGeo.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
+  const lineMat = new THREE.LineBasicMaterial({ color: 0x00B8D9, transparent: true, opacity: 0.4 });
+  scene.add(new THREE.LineSegments(lineGeo, lineMat));
+
+  // Floating data nodes
+  const nodeGeo = new THREE.SphereGeometry(0.06, 8, 8);
+  const nodeMat = new THREE.MeshBasicMaterial({ color: 0x0056D2, transparent: true, opacity: 0.8 });
+  for (let i = 0; i < 40; i++) {
+    const node = new THREE.Mesh(nodeGeo, nodeMat);
+    node.position.set(
+      (Math.random() - 0.5) * 8,
+      (Math.random() - 0.5) * 12,
+      (Math.random() - 0.5) * 4
+    );
+    scene.add(node);
+  }
+
+  function resize() {
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  let frame = 0;
+  function animate() {
+    requestAnimationFrame(animate);
+    frame++;
+    const t = frame * 0.003;
+    lineGeo.rotateZ(0.002);
+    camera.position.x = Math.sin(t * 0.5) * 1.5;
+    camera.position.y = Math.cos(t * 0.3) * 0.8;
+    camera.lookAt(0, 0, 0);
+    renderer.render(scene, camera);
+  }
+  animate();
+})();
+
+// ── Services Page Three.js Background ───────────────────────────────────────
+(function initServices3D() {
+  const canvas = document.getElementById('services-bg-canvas');
+  if (!canvas || !window.THREE) return;
+
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setClearColor(0x000000, 0);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(60, 1, 0.1, 100);
+  camera.position.set(0, 0, 7);
+
+  // Grid of cubes
+  const CUBE_SIZE = 0.28;
+  const GRID_W = 7, GRID_H = 5;
+  const cubeGeo = new THREE.BoxGeometry(CUBE_SIZE, CUBE_SIZE, CUBE_SIZE);
+  for (let xi = 0; xi < GRID_W; xi++) {
+    for (let yi = 0; yi < GRID_H; yi++) {
+      const hue = (xi + yi) / (GRID_W + GRID_H);
+      const color = new THREE.Color().setHSL(0.58 + hue * 0.15, 0.9, 0.55);
+      const mat = new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.5, wireframe: false });
+      const mesh = new THREE.Mesh(cubeGeo, mat);
+      mesh.position.set(
+        (xi - GRID_W / 2 + 0.5) * 0.9,
+        (yi - GRID_H / 2 + 0.5) * 0.9,
+        (Math.random() - 0.5) * 0.5
+      );
+      mesh.userData.baseY = mesh.position.y;
+      mesh.userData.phase = xi * 0.4 + yi * 0.3;
+      scene.add(mesh);
+    }
+  }
+
+  // Wireframe overlay for same cubes
+  const wireGeo = new THREE.BoxGeometry(CUBE_SIZE * 1.02, CUBE_SIZE * 1.02, CUBE_SIZE * 1.02);
+  const wireMat = new THREE.MeshBasicMaterial({ color: 0x00B8D9, wireframe: true, transparent: true, opacity: 0.25 });
+  for (let xi = 0; xi < GRID_W; xi++) {
+    for (let yi = 0; yi < GRID_H; yi++) {
+      const wire = new THREE.Mesh(wireGeo, wireMat);
+      wire.position.set(
+        (xi - GRID_W / 2 + 0.5) * 0.9,
+        (yi - GRID_H / 2 + 0.5) * 0.9,
+        (Math.random() - 0.5) * 0.5
+      );
+      wire.userData.baseY = wire.position.y;
+      wire.userData.phase = xi * 0.4 + yi * 0.3 + 0.2;
+      scene.add(wire);
+    }
+  }
+
+  function resize() {
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  let frame = 0;
+  function animate() {
+    requestAnimationFrame(animate);
+    frame++;
+    const t = frame * 0.008;
+    scene.children.forEach(child => {
+      if (child.userData.baseY !== undefined) {
+        child.position.y = child.userData.baseY + Math.sin(t + child.userData.phase) * 0.12;
+      }
+    });
+    camera.position.x = Math.sin(t * 0.4) * 1.2;
+    camera.position.y = Math.cos(t * 0.3) * 0.6;
+    camera.lookAt(0, 0, 0);
+    renderer.render(scene, camera);
+  }
+  animate();
+})();
+</script>
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/256740396825" target="_blank" rel="noopener"
+     aria-label="Chat on WhatsApp"
+     style="position:fixed;bottom:24px;right:24px;z-index:9999;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.45);text-decoration:none;transition:transform 0.2s;"
+     onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+    </svg>
+  </a>
+
+</body>
+</html>
